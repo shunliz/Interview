@@ -10,6 +10,7 @@
     * [Java动态代理的两种实现方法](java/j2ee/javadong-tai-dai-li-de-liang-zhong-shi-xian-fang-fa.md)
   * JVM
     * [JVM GC](java/jvm-gc.md)
+    * [JVM 组成](java/jvm-zu-cheng.md)
 * C/C++
 * Web
 * 职业
