@@ -1,3 +1,7 @@
+#  Java动态代理的两种实现方法
+
+
+
 AOP的拦截功能是由java中的动态代理来实现的。说白了，就是在目标类的基础上增加切面逻辑，生成增强的目标类（该切面逻辑或者在目标类函数执行之前，或者目标类函数执行之后，或者在目标类函数抛出异常时候执行。不同的切入时机对应不同的Interceptor的种类，如BeforeAdviseInterceptor，AfterAdviseInterceptor以及ThrowsAdviseInterceptor等）。
 
 那么动态代理是如何实现将切面逻辑（advise）织入到目标类方法中去的呢？下面我们就来详细介绍并实现AOP中用到的两种动态代理。
@@ -178,4 +182,48 @@ getName
 getAge  
 ------getAge------  
 ++++++before CGLIB$getAge$1++++++
+
+
+
+# 静态代理
+
+代理模式 
+
+代理模式是常用的java设计模式，他的特征是代理类与委托类有同样的接口，代理类主要负责为委托类预处理消息、过滤消息、把消息转发给委托类，以及事后处理消息等。代理类与委托类之间通常会存在关联关系，一个代理类的对象与一个委托类的对象关联，代理类的对象本身并不真正实现服务，而是通过调用委托类的对象的相关方法，来提供特定的服务。 
+
+按照代理的创建时期，代理类可以分为两种。 
+
+静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+
+动态代理：在程序运行时，运用反射机制动态创建而成。 
+
+```java
+package com.meituan.hyt.test3.service;
+
+import com.meituan.hyt.test3.service.impl.UserServiceImpl;
+
+public class UserServiceProxy implements UserService{
+
+	private UserServiceImpl userServiceImpl;  
+	
+	@Override
+	public String getName(int id) {
+		System.out.println("事务处理之前");  
+		userServiceImpl.getName(id);
+		System.out.println("事务处理之后");  
+		return null;
+	}
+
+	@Override
+	public Integer getAge(int id) {
+		System.out.println("事务处理之前");  
+		userServiceImpl.getAge(id);
+		System.out.println("事务处理之后");  
+		return null;
+	}
+
+}
+```
+
+
 
