@@ -11,6 +11,7 @@
   * JVM
     * [JVM GC](java/jvm-gc.md)
     * [JVM 组成](java/jvm-zu-cheng.md)
+    * [JVM调优](java/jvmdiao-you.md)
 * C/C++
 * Web
 * 职业
