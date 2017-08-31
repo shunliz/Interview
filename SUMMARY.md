@@ -8,6 +8,8 @@
 * [Java](java.md)
   * [J2EE](java/j2ee.md)
     * [Java动态代理的两种实现方法](java/j2ee/javadong-tai-dai-li-de-liang-zhong-shi-xian-fang-fa.md)
+  * JVM
+    * [JVM GC](java/jvm-gc.md)
 * C/C++
 * Web
 * 职业
