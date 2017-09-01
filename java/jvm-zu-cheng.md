@@ -22,3 +22,5 @@ JVM定义了控制Java代码[解释执行](http://baike.so.com/doc/358371.html)�
 
 ![](/assets/jvmarch1.png)
 
+![](/assets/jvmarch2.png)
+
