@@ -2,7 +2,7 @@
 
 * [简介](README.md)
 * [算法](suan-fa.md)
-* 操作系统
+* [操作系统](cao-zuo-xi-tong.md)
 * 网络
 * 数据库
   * [SQL优化](sqlyou-hua.md)
