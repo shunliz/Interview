@@ -1,6 +1,6 @@
 # Summary
 
-* [简介](README.md)
+
 * [算法](suan-fa.md)
 * [操作系统](cao-zuo-xi-tong.md)
 * 网络
