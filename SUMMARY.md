@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
-* 算法
+* [简介](README.md)
+* [算法](suan-fa.md)
 * 操作系统
 * 网络
 * 数据库
