@@ -31,4 +31,5 @@
   * spark
   * storm
   * kafka
+  * hadoop
 
