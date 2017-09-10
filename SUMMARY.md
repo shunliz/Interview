@@ -27,6 +27,7 @@
 * 职业
 * 存储
 * 云计算
+  * openstack
 * 大数据
   * spark
   * storm
