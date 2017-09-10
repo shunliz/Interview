@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [算法](suan-fa.md)
+  * 排序
+  * 查找
 * [操作系统](cao-zuo-xi-tong.md)
 * 网络
 * 数据库
