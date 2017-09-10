@@ -30,4 +30,5 @@
 * 大数据
   * spark
   * storm
+  * kafka
 
