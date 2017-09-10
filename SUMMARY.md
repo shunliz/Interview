@@ -7,6 +7,8 @@
   * 递归
   * 动态规划
 * [操作系统](cao-zuo-xi-tong.md)
+  * 原理
+  * linux
 * 网络
 * 数据库
   * [SQL优化](sqlyou-hua.md)
