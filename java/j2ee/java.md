@@ -20,11 +20,9 @@ CAS有三个操作数，内存数据v，旧的预期数据A，要修改的数据
 
 现在的CPU提供了特殊的指令来自动更新共享数据，而且能检测到其他数据的干扰，因此可以通过compareAndSet来提到锁定。前面我们提到的一些原子类其实就是用的这个原理，如AtomicInteger，我们来看一下它对应的源码。
 
-
-
 ```
 private volatile int value;
- 
+
 public final int incrementAndGet() {
         for (;;) {
             int current = get();
@@ -43,8 +41,6 @@ public final int getAndAdd(int delta) {
     }
 ```
 
-
-
 这里很显然采取了CAS的机制，每次从内存中读取数据都需要和+1后的数据进行一次CAS操作，如果成功返回结果，否则就失败重试，直到重试成功为止！
 
 但是方法compareAndSet却是利用JNI来完成CPU指令的操作。
@@ -52,7 +48,12 @@ public final int getAndAdd(int delta) {
 我们来看一下对应的源码
 
 ```
-
+// setup to use Unsafe.compareAndSwapInt for updates
+private static final Unsafe unsafe = Unsafe.getUnsafe();
+ 
+public final boolean compareAndSet(int expect, int update) {
+    return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+    }
 ```
 
 整个过程就是这样子的，利用CPU的CAS机制，同时借助JNI来完成Java的非阻塞算法。基本上Java中的原子类都是使用类似的机制来保证数据的原子操作的。
