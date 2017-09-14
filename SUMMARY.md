@@ -22,6 +22,7 @@
   * [J2EE](java/j2ee.md)
     * [Java动态代理的两种实现方法](java/j2ee/javadong-tai-dai-li-de-liang-zhong-shi-xian-fang-fa.md)
     * [Lock与synchronized 的区别](java/j2ee/lockyu-synchronized-de-qu-bie.md)
+    * [ThreadPoolExecutor机制](java/j2ee/threadpoolexecutorji-zhi.md)
   * JVM
     * [JVM GC](java/jvm-gc.md)
     * [JVM 组成](java/jvm-zu-cheng.md)
