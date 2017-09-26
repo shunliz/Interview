@@ -34,6 +34,7 @@
     * [抽象类和接口](java/chou-xiang-lei-he-jie-kou.md)
     * [父类子类](java/fu-lei-zi-lei.md)
     * [overload&override](java/overloadandoverride.md)
+    * [运行时异常与受检异常](java/yun-xing-shi-yi-chang-yu-shou-jian-yi-chang.md)
 * C/C++
 * [Web](web.md)
   * javascript
