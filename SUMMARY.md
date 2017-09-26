@@ -29,6 +29,7 @@
     * [JVM GC](java/jvm-gc.md)
     * [JVM 组成](java/jvm-zu-cheng.md)
     * [JVM调优](java/jvmdiao-you.md)
+    * [JVM加载class文件的原理机制](java/jvmjia-zai-class-wen-jian-de-yuan-li-ji-zhi.md)
   * J2SE
     * [抽象类和接口](java/chou-xiang-lei-he-jie-kou.md)
     * [父类子类](java/fu-lei-zi-lei.md)
