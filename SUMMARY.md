@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Introduction]
 * [算法](suan-fa.md)
   * 排序
   * 查找
