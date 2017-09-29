@@ -44,9 +44,11 @@
 * 存储
 * 云计算
   * openstack
-* 大数据
+* [大数据](da-shu-ju.md)
   * spark
   * storm
   * kafka
   * hadoop
+  * [设计](da-shu-ju/she-ji.md)
+    * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
 
