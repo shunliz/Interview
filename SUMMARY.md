@@ -44,6 +44,8 @@
 * 存储
 * 云计算
   * openstack
+  * Docker
+    * [kubernetes](kubernetes.md)
 * [大数据](da-shu-ju.md)
   * spark
   * storm
