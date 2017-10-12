@@ -8,5 +8,5 @@
 
 ![](/assets/qemu-kvm7.png)
 
-
+![](/assets/qemu-kvm8.png)
 
