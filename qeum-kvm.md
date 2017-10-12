@@ -6,7 +6,7 @@
 
 ![](/assets/qemu-kvm6.png)
 
-
+![](/assets/qemu-kvm7.png)
 
 
 
