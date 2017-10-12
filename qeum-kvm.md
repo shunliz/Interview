@@ -8,5 +8,9 @@
 
 ![](/assets/qemu-kvm7.png)
 
-![](/assets/qemu-kvm8.png)
+![](/assets/qemu-kvm8.png)![](/assets/qemu-kvm11.png)
+
+![](/assets/qemu-kvm12.png)
+
+
 
