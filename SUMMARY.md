@@ -46,6 +46,7 @@
   * openstack
   * Docker
     * [kubernetes](kubernetes.md)
+  * [qeum-kvm](qeum-kvm.md)
 * [大数据](da-shu-ju.md)
   * spark
   * storm
