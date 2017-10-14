@@ -332,15 +332,10 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 
 很不幸，如果查询条件中含有函数或表达式，则MySQL不会为这列使用索引（虽然某些在数学意义上可以使用）。例如：
 
-```
+![](/assets/mysqlindex31.png)
 
-```
-
-虽然这个查询和情况五中功能相同，但是由于使用了函数left，则无法为title列应用索引，而情况五中用LIKE则可以。再如：
-
-```
-
-```
+虽然这个查询和情况五中功能相同，但是由于使用了函数left，则无法为title列应用索引，而情况五中用LIKE则可以。再如：  
+![](/assets/mysqlindex32.png)
 
 显然这个查询等价于查询emp\_no为10001的函数，但是由于查询条件是一个表达式，MySQL无法为其使用索引。看来MySQL还没有智能到自动优化常量表达式的程度，因此在写查询语句时尽量避免表达式出现在查询中，而是先手工私下代数运算，转换为无表达式的查询语句。
 
@@ -356,9 +351,7 @@ Index Selectivity = Cardinality / \#T
 
 显然选择性的取值范围为\(0, 1\]，选择性越高的索引价值越大，这是由B+Tree的性质决定的。例如，上文用到的employees.titles表，如果title字段经常被单独查询，是否需要建索引，我们看一下它的选择性：
 
-```
-
-```
+![](/assets/myqlindex41.png)
 
 title的选择性不足0.0001（精确值为0.00001579），所以实在没有什么必要为其单独建索引。
 
@@ -366,39 +359,21 @@ title的选择性不足0.0001（精确值为0.00001579），所以实在没有�
 
 从图12可以看到employees表只有一个索引&lt;emp\_no&gt;，那么如果我们想按名字搜索一个人，就只能全表扫描了：
 
-```
+![](/assets/mysqlindex45.png)
 
-```
-
-如果频繁按名字搜索员工，这样显然效率很低，因此我们可以考虑建索引。有两种选择，建&lt;first\_name&gt;或&lt;first\_name, last\_name&gt;，看下两个索引的选择性：
-
-```
-
-```
+如果频繁按名字搜索员工，这样显然效率很低，因此我们可以考虑建索引。有两种选择，建&lt;first\_name&gt;或&lt;first\_name, last\_name&gt;，看下两个索引的选择性：![](/assets/mysqlindex46.png)
 
 &lt;first\_name&gt;显然选择性太低，&lt;first\_name, last\_name&gt;选择性很好，但是first\_name和last\_name加起来长度为30，有没有兼顾长度和选择性的办法？可以考虑用first\_name和last\_name的前几个字符建立索引，例如&lt;first\_name, left\(last\_name, 3\)&gt;，看看其选择性：
 
-```
-
-```
+![](/assets/mysqlindex47.png)
 
 选择性还不错，但离0.9313还是有点距离，那么把last\_name前缀加到4：
 
-```
+![](/assets/mysqlindex51.png)这时选择性已经很理想了，而这个索引的长度只有18，比&lt;first\_name, last\_name&gt;短了接近一半，我们把这个前缀索引 建上：
 
-```
+![](/assets/mysqlindex52.png)
 
-这时选择性已经很理想了，而这个索引的长度只有18，比&lt;first\_name, last\_name&gt;短了接近一半，我们把这个前缀索引 建上：
-
-```
-
-```
-
-此时再执行一遍按名字查询，比较分析一下与建索引前的结果：
-
-```
-
-```
+此时再执行一遍按名字查询，比较分析一下与建索引前的结果：![](/assets/mysqlidnex54.png)
 
 性能的提升是显著的，查询速度提高了120多倍。
 
