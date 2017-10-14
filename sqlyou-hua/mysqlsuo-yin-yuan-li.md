@@ -1,15 +1,5 @@
 [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 
-作者 张洋 \| 发布于 2011-10-18
-
-[MySQL](http://blog.codinglabs.org/tag.html#MySQL)
-
-[索引](http://blog.codinglabs.org/tag.html#索引)
-
-[B树](http://blog.codinglabs.org/tag.html#B树)
-
-[优化](http://blog.codinglabs.org/tag.html#优化)
-
 # 摘要
 
 本文以MySQL数据库为研究对象，讨论与数据库索引相关的一些话题。特别需要说明的是，MySQL支持诸多存储引擎，而各种存储引擎对索引的支持也各不相同，因此MySQL数据库支持多种索引类型，如BTree索引，哈希索引，全文索引等等。为了避免混乱，本文将只关注于BTree索引，因为这是平常使用MySQL时主要打交道的索引，至于哈希索引和全文索引本文暂不讨论。
@@ -66,11 +56,11 @@ key和指针互相间隔，节点两端是指针。
 
 每个指针要么为null，要么指向另外一个节点。
 
-如果某个指针在节点node最左边且不为null，则其指向节点的所有key小于v\(key1\)v\(key1\)，其中v\(key1\)v\(key1\)为node的第一个key的值。
+如果某个指针在节点node最左边且不为null，则其指向节点的所有key小于v\(key1\)，其中v\(key1\)为node的第一个key的值。
 
-如果某个指针在节点node最右边且不为null，则其指向节点的所有key大于v\(keym\)v\(keym\)，其中v\(keym\)v\(keym\)为node的最后一个key的值。
+如果某个指针在节点node最右边且不为null，则其指向节点的所有key大于v\(keym\)，其中v\(keym\)为node的最后一个key的值。
 
-如果某个指针在节点node的左右相邻key分别是keyikeyi和keyi+1keyi+1且不为null，则其指向节点的所有key小于v\(keyi+1\)v\(keyi+1\)且大于v\(keyi\)v\(keyi\)。
+如果某个指针在节点node的左右相邻key分别是keyi和keyi+1且不为null，则其指向节点的所有key小于v\(keyi+1\)且大于v\(keyi\)。
 
 图2是一个d=2的B-Tree示意图。
 
@@ -80,101 +70,22 @@ key和指针互相间隔，节点两端是指针。
 
 由于B-Tree的特性，在B-Tree中按key检索数据的算法非常直观：首先从根节点进行二分查找，如果找到则返回对应节点的data，否则对相应区间的指针指向的节点递归进行查找，直到找到节点或找到null指针，前者查找成功，后者查找失败。B-Tree上查找算法的伪代码如下：
 
+```java
+BTree_Search(node, key) {
+    if(node == null) return null;
+    foreach(node.key)
+    {
+        if(node.key[i] == key) return node.data[i];
+            if(node.key[i] > key) return BTree_Search(point[i]->node);
+    }
+    return BTree_Search(point[i+1]->node);
+}
+data = BTree_Search(root, my_key);
 ```
 
-```
+关于B-Tree有一系列有趣的性质，例如一个度为d的B-Tree，设其索引N个key，则其树高h的上限为logd\(\(N+1\)/2\)
 
-关于B-Tree有一系列有趣的性质，例如一个度为d的B-Tree，设其索引N个key，则其树高h的上限为
-
-l
-
-o
-
-g
-
-d
-
-\(
-
-\(
-
-N
-
-+
-
-1
-
-\)
-
-/
-
-2
-
-\)
-
-l
-
-o
-
-g
-
-d
-
-\(
-
-\(
-
-N
-
-+
-
-1
-
-\)
-
-/
-
-2
-
-\)
-
-，检索一个key，其查找节点个数的渐进复杂度为
-
-O
-
-\(
-
-l
-
-o
-
-g
-
-d
-
-N
-
-\)
-
-O
-
-\(
-
-l
-
-o
-
-g
-
-d
-
-N
-
-\)
-
-。从这点可以看出，B-Tree是一个非常有效率的索引数据结构。
-
-
+，检索一个key，其查找节点个数的渐进复杂度为O\(logdN\)。从这点可以看出，B-Tree是一个非常有效率的索引数据结构。
 
 另外，由于插入删除新的数据记录会破坏B-Tree的性质，因此在插入删除时，需要对树进行一个分裂、合并、转移等操作以保持B-Tree性质，本文不打算完整讨论B-Tree这些内容，因为已经有许多资料详细说明了B-Tree的数学性质及插入删除算法，有兴趣的朋友可以在本文末的参考文献一栏找到相应的资料进行阅读。
 
@@ -284,7 +195,7 @@ B-Tree中一次检索最多需要h-1次I/O（根节点常驻内存），渐进�
 
 上文还说过，B+Tree更适合外存索引，原因和内节点出度d有关。从上面分析可以看到，d越大索引的性能越好，而出度的上限取决于节点内key和data的大小：
 
-dmax=floor\(pagesize/\(keysize+datasize+pointsize\)\)dmax=floor\(pagesize/\(keysize+datasize+pointsize\)\)
+dmax=floor\(pagesize/\(keysize+datasize+pointsize\)\)
 
 floor表示向下取整。由于B+Tree内节点去掉了data域，因此可以拥有更大的出度，拥有更好的性能。
 
@@ -356,25 +267,14 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 
 这里先说一下联合索引的概念。在上文中，我们都是假设索引只引用了单个的列，实际上，MySQL中的索引可以以一定顺序引用多个列，这种索引叫做联合索引，一般的，一个联合索引是一个有序元组&lt;a1, a2, …, an&gt;，其中各个元素均为数据表的一列，实际上要严格定义索引需要用到关系代数，但是这里我不想讨论太多关系代数的话题，因为那样会显得很枯燥，所以这里就不再做严格定义。另外，单列索引可以看成联合索引元素数为1的特例。
 
-以employees.titles表为例，下面先查看其上都有哪些索引：
+以employees.titles表为例，下面先查看其上都有哪些索引：![](/assets/mysqlindex1.png)从结果中可以到titles表的主索引为&lt;emp\_no, title, from\_date&gt;，还有一个辅助索引&lt;emp\_no&gt;。为了避免多个索引使事情变复杂（MySQL的SQL优化器在多索引时行为比较复杂），这里我们将辅助索引drop掉：
 
-```
-
-```
-
-从结果中可以到titles表的主索引为&lt;emp\_no, title, from\_date&gt;，还有一个辅助索引&lt;emp\_no&gt;。为了避免多个索引使事情变复杂（MySQL的SQL优化器在多索引时行为比较复杂），这里我们将辅助索引drop掉：
-
-```
-
-```
+![](/assets/mysqlindex2.png)
 
 这样就可以专心分析索引PRIMARY的行为了。
 
 ### 情况一：全列匹配。
-
-```
-
-```
+![](/assets/mysqlindex3.png)
 
 很明显，当按照索引中所有列进行精确匹配（这里精确匹配指“=”或“IN”匹配）时，索引可以被用到。这里有一点需要注意，理论上索引对顺序是敏感的，但是由于MySQL的查询优化器会自动调整where子句的条件顺序以使用适合的索引，例如我们将where中的条件顺序颠倒：
 
@@ -465,8 +365,6 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 ```
 
 虽然这个查询和情况五中功能相同，但是由于使用了函数left，则无法为title列应用索引，而情况五中用LIKE则可以。再如：
-
-
 
 ```
 
