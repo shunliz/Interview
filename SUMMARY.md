@@ -2,8 +2,8 @@
 
 * [Introduction](README.md)
 * [算法](suan-fa.md)
-  * 排序
-  * 查找
+  * [排序](suan-fa/pai-xu.md)
+  * [查找](suan-fa/cha-zhao.md)
   * 递归
   * 动态规划
 * [操作系统](cao-zuo-xi-tong.md)
