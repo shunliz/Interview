@@ -44,7 +44,7 @@
             this.printlist(a);
         }
     }
-    
+
     /**
      * 构建大顶堆
      */
@@ -60,6 +60,25 @@
             i = j;
         }
         a[i] = temp;
+    }
+```
+
+```java
+    public void topK(int[] a, int k){
+    	int[] b = new int[k];
+    	for (int i=0;i<k;i++){
+    		b[i]=a[i];
+    	}
+    	this.heapSort(b);
+    	System.out.println("build heap finish");
+    	for(int i=k;i<a.length;i++){
+    		if (a[k]>b[k-1]){
+    			b[k-1] = a[k];
+                this.adjustHeap(b, 0, k);
+    		}
+    		this.printlist(b, k);
+    	}
+    	
     }
 ```
 
