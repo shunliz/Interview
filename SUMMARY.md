@@ -2,8 +2,7 @@
 
 * [Introduction](README.md)
 * [算法](suan-fa.md)
-  * [排序](suan-fa/pai-xu.md)
-    * [堆排序](suan-fa/pai-xu/dui-pai-xu.md)
+  * 排序
   * 查找
   * 递归
   * 动态规划
