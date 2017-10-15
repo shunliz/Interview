@@ -75,20 +75,14 @@ int BinarySearch1(int a[], int value, int n)
     int low, high, mid;
     low = 0;
     high = n-1;
-    while(low
-<
-=high)
+    while(low<=high)
     {
         mid = (low+high)/2;
         if(a[mid]==value)
             return mid;
-        if(a[mid]
->
-value)
+        if(a[mid]>value)
             high = mid-1;
-        if(a[mid]
-<
-value)
+        if(a[mid]<value)
             low = mid+1;
     }
     return -1;
@@ -100,13 +94,9 @@ int BinarySearch2(int a[], int value, int low, int high)
     int mid = low+(high-low)/2;
     if(a[mid]==value)
         return mid;
-    if(a[mid]
->
-value)
+    if(a[mid]>value)
         return BinarySearch2(a, value, low, mid-1);
-    if(a[mid]
-<
-value)
+    if(a[mid]<value)
         return BinarySearch2(a, value, mid+1, high);
 }
 ```
