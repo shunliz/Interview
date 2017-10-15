@@ -8,6 +8,7 @@
   * [查找](suan-fa/cha-zhao.md)
   * 递归
   * 动态规划
+  * [KMP](suan-fa/kmp.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
