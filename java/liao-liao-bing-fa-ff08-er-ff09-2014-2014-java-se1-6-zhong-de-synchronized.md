@@ -76,8 +76,6 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 
 关闭偏向锁：偏向锁在Java 6和Java 7里是默认启用的，但是它在应用程序启动几秒钟之后才激活，如有必要可以使用JVM参数来关闭延迟-XX：BiasedLockingStartupDelay = 0。如果你确定自己应用程序里所有的锁通常情况下处于竞争状态，可以通过JVM参数关闭偏向锁-XX:-UseBiasedLocking=false，那么默认会进入轻量级锁状态。
 
-
-
 ### 4.4 轻量级锁
 
 轻量级锁加锁：线程在执行同步块之前，JVM会先在当前线程的栈桢中创建用于存储锁记录的空间，并将对象头中的Mark Word复制到锁记录中，官方称为Displaced Mark Word。然后线程尝试使用CAS将对象头中的Mark Word替换为指向锁记录的指针。如果成功，当前线程获得锁，如果失败，表示其他线程竞争锁，当前线程便尝试使用自旋来获取锁。
@@ -87,6 +85,8 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 ![](http://cdn.infoqstatic.com/statics_s2_20171010-0642/resource/articles/java-se-16-synchronized/zh/resources/image3.png)
 
 因为自旋会消耗CPU，为了避免无用的自旋（比如获得锁的线程被阻塞住了），一旦锁升级成重量级锁，就不会再恢复到轻量级锁状态。当锁处于这个状态下，其他线程试图获取锁时，都会被阻塞住，当持有锁的线程释放锁之后会唤醒这些线程，被唤醒的线程就会进行新一轮的夺锁之争。
+
+
 
 ## 5 锁的优缺点对比
 
@@ -103,7 +103,7 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 ## 7 参考资料
 
 * [偏向锁](http://www.oracle.com/technetwork/java/javase/tech/biasedlocking-oopsla2006-preso-150106.pdf)
-* \[java-overview-and-java-se6\]\(\[[http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29\)\)
+* \[java-overview-and-java-se6\]\(\[\[[http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\)\](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29%29\)\)
    Synchronization Optimization章节
 * Dave Dice
   [“Synchronization in Java SE 6”](http://home.comcast.net/~pjbishop/Dave/MustangSync.pdf)
