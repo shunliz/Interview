@@ -12,8 +12,6 @@
 | :--- | :--- | :--- |
 | CAS | Compare and Swap | 比较并设置。用于在硬件层面上提供原子性操作。在Intel处理器中，比较并交换通过指令cmpxchg实现。比较是否和给定的数值一致，如果一致则修改，不一致则不修改。 |
 
-
-
 ## 3 同步的基础
 
 Java中的每一个对象都可以作为锁。
@@ -32,15 +30,11 @@ JVM规范规定JVM基于进入和退出Monitor对象来实现方法同步和代�
 
 锁存在Java对象头里。如果对象是数组类型，则虚拟机用3个Word（字宽）存储对象头，如果对象是非数组类型，则用2字宽存储对象头。在32位虚拟机中，一字宽等于四字节，即32bit。
 
-
-
 | 长度 | 内容 | 说明 |
 | :--- | :--- | :--- |
 | 32/64bit | Mark Word | 存储对象的hashCode或锁信息等。 |
 | 32/64bit | Class Metadata Address | 存储到对象类型数据的指针 |
 | 32/64bit | Array length | 数组的长度（如果当前对象是数组） |
-
-
 
 Java对象头里的Mark Word里默认存储对象的HashCode，分代年龄和锁标记位。32位JVM的Mark Word的默认存储结构如下：
 
@@ -58,9 +52,7 @@ Java对象头里的Mark Word里默认存储对象的HashCode，分代年龄和�
 |  |  |  | GC标记 | 空 | 11 |
 | 偏向锁 | 线程ID | Epoch | 对象分代年龄 | 1 | 01 |
 
-在64位虚拟机下，Mark Word是64bit大小的，其存储结构如下： 
-
-
+在64位虚拟机下，Mark Word是64bit大小的，其存储结构如下：
 
 | **锁状态** | 25bit | 31bit | 1bit | 4bit | 1bit | 2bit |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -68,11 +60,11 @@ Java对象头里的Mark Word里默认存储对象的HashCode，分代年龄和�
 | 无锁 | unused | hashCode |  |  | 0 | 01 |
 |  | 偏向锁 | ThreadID\(54bit\) Epoch\(2bit\) |  |  | 1 | 01 |
 
-
-
 ### 4.2 锁的升级
 
 Java SE1.6为了减少获得锁和释放锁所带来的性能消耗，引入了“偏向锁”和“轻量级锁”，所以在Java SE1.6里锁一共有四种状态，无锁状态，偏向锁状态，轻量级锁状态和重量级锁状态，它会随着竞争情况逐渐升级。锁可以升级但不能降级，意味着偏向锁升级成轻量级锁后不能降级成偏向锁。这种锁升级却不能降级的策略，目的是为了提高获得锁和释放锁的效率，下文会详细分析。
+
+
 
 ![](http://cdn.infoqstatic.com/statics_s2_20171010-0642/resource/articles/java-se-16-synchronized/zh/resources/image1.png)
 
@@ -98,15 +90,11 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 
 ## 5 锁的优缺点对比
 
-
-
 | 锁 | 优点 | 缺点 | 适用场景 |
 | :--- | :--- | :--- | :--- |
 | 偏向锁 | 加锁和解锁不需要额外的消耗，和执行非同步方法比仅存在纳秒级的差距。 | 如果线程间存在锁竞争，会带来额外的锁撤销的消耗。 | 适用于只有一个线程访问同步块场景。 |
 | 轻量级锁 | 竞争的线程不会阻塞，提高了程序的响应速度。 | 如果始终得不到锁竞争的线程使用自旋会消耗CPU。 | 追求响应时间。同步块执行速度非常快。 |
 | 重量级锁 | 线程竞争不使用自旋，不会消耗CPU。 | 线程阻塞，响应时间缓慢。 | 追求吞吐量。同步块执行速度较长。 |
-
-
 
 ## 6 参考源码
 
@@ -115,8 +103,8 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 ## 7 参考资料
 
 * [偏向锁](http://www.oracle.com/technetwork/java/javase/tech/biasedlocking-oopsla2006-preso-150106.pdf)
-* [java-overview-and-java-se6](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html)
-   Synchronization Optimization章节
+* \[java-overview-and-java-se6\]\([http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html)\)
+   Synchronization Optimization章节
 * Dave Dice
   [“Synchronization in Java SE 6”](http://home.comcast.net/~pjbishop/Dave/MustangSync.pdf)
 * [Java SE 6 Performance White Paper](http://java.sun.com/performance/reference/whitepapers/6_performance.html#2.1.3)
