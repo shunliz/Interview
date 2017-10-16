@@ -13,6 +13,7 @@
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
+    * [锁的实现](cao-zuo-xi-tong/suo-de-shi-xian.md)
   * linux
 * 网络
   * TCP/IP
