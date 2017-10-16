@@ -42,6 +42,7 @@
     * [overload&override](java/overloadandoverride.md)
     * [运行时异常与受检异常](java/yun-xing-shi-yi-chang-yu-shou-jian-yi-chang.md)
     * [聊聊并发（一）——深入分析Volatile的实现原理](java/shen-ru-fen-xi-volatile-de-shi-xian-yuan-li.md)
+    * [聊聊并发（二）——Java SE1.6中的Synchronized](java/liao-liao-bing-fa-ff08-er-ff09-2014-2014-java-se1-6-zhong-de-synchronized.md)
 * C/C++
 * [Web](web.md)
   * javascript
