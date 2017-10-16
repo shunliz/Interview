@@ -64,8 +64,6 @@ Java对象头里的Mark Word里默认存储对象的HashCode，分代年龄和�
 
 Java SE1.6为了减少获得锁和释放锁所带来的性能消耗，引入了“偏向锁”和“轻量级锁”，所以在Java SE1.6里锁一共有四种状态，无锁状态，偏向锁状态，轻量级锁状态和重量级锁状态，它会随着竞争情况逐渐升级。锁可以升级但不能降级，意味着偏向锁升级成轻量级锁后不能降级成偏向锁。这种锁升级却不能降级的策略，目的是为了提高获得锁和释放锁的效率，下文会详细分析。
 
-
-
 ![](http://cdn.infoqstatic.com/statics_s2_20171010-0642/resource/articles/java-se-16-synchronized/zh/resources/image1.png)
 
 ### 4.3 偏向锁
@@ -77,6 +75,8 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 ![](http://cdn.infoqstatic.com/statics_s2_20171010-0642/resource/articles/java-se-16-synchronized/zh/resources/image2.png)
 
 关闭偏向锁：偏向锁在Java 6和Java 7里是默认启用的，但是它在应用程序启动几秒钟之后才激活，如有必要可以使用JVM参数来关闭延迟-XX：BiasedLockingStartupDelay = 0。如果你确定自己应用程序里所有的锁通常情况下处于竞争状态，可以通过JVM参数关闭偏向锁-XX:-UseBiasedLocking=false，那么默认会进入轻量级锁状态。
+
+
 
 ### 4.4 轻量级锁
 
@@ -103,7 +103,7 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 ## 7 参考资料
 
 * [偏向锁](http://www.oracle.com/technetwork/java/javase/tech/biasedlocking-oopsla2006-preso-150106.pdf)
-* \[java-overview-and-java-se6\]\([http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html)\)
+* \[java-overview-and-java-se6\]\(\[[http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29\)\)
    Synchronization Optimization章节
 * Dave Dice
   [“Synchronization in Java SE 6”](http://home.comcast.net/~pjbishop/Dave/MustangSync.pdf)
