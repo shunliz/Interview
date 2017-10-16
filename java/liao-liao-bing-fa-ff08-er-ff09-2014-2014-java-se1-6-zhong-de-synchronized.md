@@ -86,8 +86,6 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 
 因为自旋会消耗CPU，为了避免无用的自旋（比如获得锁的线程被阻塞住了），一旦锁升级成重量级锁，就不会再恢复到轻量级锁状态。当锁处于这个状态下，其他线程试图获取锁时，都会被阻塞住，当持有锁的线程释放锁之后会唤醒这些线程，被唤醒的线程就会进行新一轮的夺锁之争。
 
-
-
 ## 5 锁的优缺点对比
 
 | 锁 | 优点 | 缺点 | 适用场景 |
@@ -100,10 +98,12 @@ Hotspot的作者经过以往的研究发现大多数情况下锁不仅不存在�
 
 本文一些内容参考了[HotSpot](http://hg.openjdk.java.net/hsx/hotspot-main/hotspot/file/61b82be3b1ff/)源码 。对象头源码markOop.hpp。偏向锁源码biasedLocking.cpp。以及其他源码ObjectMonitor.cpp和BasicLock.cpp。
 
+
+
 ## 7 参考资料
 
 * [偏向锁](http://www.oracle.com/technetwork/java/javase/tech/biasedlocking-oopsla2006-preso-150106.pdf)
-* \[java-overview-and-java-se6\]\(\[\[[http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\)\](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29%29\)\)
+* \[java-overview-and-java-se6\]\(\[\[\[[http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\)\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\]\(http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html\)\)\)\](http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29%29]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html]%28http://pdffinder.net/Java-Overview-and-Java-SE-6-What's-New.html%29%29%29\)\)
    Synchronization Optimization章节
 * Dave Dice
   [“Synchronization in Java SE 6”](http://home.comcast.net/~pjbishop/Dave/MustangSync.pdf)
