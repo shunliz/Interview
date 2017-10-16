@@ -10,7 +10,6 @@
 
 ```
 new  ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, milliseconds,runnableTaskQueue, handler);
-
 ```
 
 创建一个线程池需要输入几个参数：
