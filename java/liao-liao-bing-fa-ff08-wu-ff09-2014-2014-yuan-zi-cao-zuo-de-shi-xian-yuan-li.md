@@ -119,7 +119,7 @@ public class Counter {
 
    ```
 
-2. ```
+2. ```java
    public boolean compareAndSet
            (V      expectedReference,//预期引用
             V      newReference,//更新后的引用
