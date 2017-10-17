@@ -49,7 +49,7 @@
 
 JVM中的CAS操作正是利用了上一节中提到的处理器提供的CMPXCHG指令实现的。自旋CAS实现的基本思路就是循环进行CAS操作直到成功为止，以下代码实现了一个基于CAS线程安全的计数器方法safeCount和一个非线程安全的计数器count。
 
-```
+```java
 public class Counter {
     private AtomicInteger atomicI = new AtomicInteger(0);
     private int i = 0;
