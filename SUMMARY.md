@@ -14,7 +14,8 @@
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
     * [锁的实现](cao-zuo-xi-tong/suo-de-shi-xian.md)
-  * linux
+  * [linux](cao-zuo-xi-tong/linux.md)
+    * [iptables](cao-zuo-xi-tong/linux/iptables.md)
 * 网络
   * [TCP/IP](tcpip.md)
 * 数据库
