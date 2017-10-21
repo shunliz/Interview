@@ -18,6 +18,8 @@
     * [iptables](cao-zuo-xi-tong/linux/iptables.md)
 * 网络
   * [TCP/IP](tcpip.md)
+  * 路由
+    * [三种路由方式](san-zhong-lu-you-fang-shi.md)
 * 数据库
   * [SQL优化](sqlyou-hua.md)
     * [索引最左前缀原理](sqlyou-hua/suo-yin-zui-zuo-qian-zhui-yuan-li.md)
