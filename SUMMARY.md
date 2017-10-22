@@ -51,8 +51,8 @@
     * [聊聊并发（五）——原子操作的实现原理](java/liao-liao-bing-fa-ff08-wu-ff09-2014-2014-yuan-zi-cao-zuo-de-shi-xian-yuan-li.md)
 * C/C++
 * [Web](web.md)
-  * javascript
-  * html
+  * [javascript](web/javascript.md)
+  * [html](web/html.md)
   * css
 * 职业
 * 存储
