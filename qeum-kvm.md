@@ -2,9 +2,9 @@
 
 ![](/assets/qemu-kvm3.png)
 
-
-
 ![](/assets/qemu-kvm4.png)![](/assets/qemu-kvm5.png)
+
+
 
 ![](/assets/qemu-kvm6.png)
 
