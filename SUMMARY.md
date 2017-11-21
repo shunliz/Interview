@@ -68,4 +68,6 @@
   * hadoop
   * [设计](da-shu-ju/she-ji.md)
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
+* [python](python.md)
+  * [eventlet原理](python/eventletyuan-li.md)
 
