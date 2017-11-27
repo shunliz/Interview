@@ -6,7 +6,7 @@ SSL is a protocol with a long history and several versions. First prototypes cam
 
 SSL version 3 \(which I will call "SSLv3"\) was an enhanced protocol which still works today and is widely supported. Although still a property of Netscape Communications \(or whoever owns that nowadays\), the protocol has been published as an "historical RFC" \([RFC 6101](http://tools.ietf.org/html/rfc6101)\). Meanwhile, the protocol has been standardized, with a**new name**in order to avoid legal issues; the new name is**TLS**.
 
-Three versions of TLS have been produced to far, each with its dedicated RFC:[TLS 1.0](http://tools.ietf.org/html/rfc2246),[TLS 1.1](http://tools.ietf.org/html/rfc4346)and[TLS 1.2](http://tools.ietf.org/html/rfc5246). They are internally very similar with each other, and with SSLv3, to the point that an implementation can easily support SSLv3 and all three TLS versions with at least 95% of the code being common. Still internally, all versions are designated by a version number with the_major.minor_format; SSLv3 is then 3.0, while the TLS versions are, respectively, 3.1, 3.2 and 3.3. Thus, it is no wonder that TLS 1.0 is sometimes called SSL 3.1 \(and it is not incorrect either\). SSL 3.0 and TLS 1.0 differ by only some minute details. TLS 1.1 and 1.2 are not yet widely supported, although there is impetus for that, because of possible weaknesses \(see below, for the "BEAST attack"\). SSLv3 and TLS 1.0 are supported "everywhere" \(even IE 6.0 knows them\).
+Three versions of TLS have been produced to far, each with its dedicated RFC:[TLS 1.0](http://tools.ietf.org/html/rfc2246),[TLS 1.1](http://tools.ietf.org/html/rfc4346)and[TLS 1.2](http://tools.ietf.org/html/rfc5246). They are internally very similar with each other, and with SSLv3, to the point that an implementation can easily support SSLv3 and all three TLS versions with at least 95% of the code being common. Still internally, all versions are designated by a version number with the\_major.minor\_format; SSLv3 is then 3.0, while the TLS versions are, respectively, 3.1, 3.2 and 3.3. Thus, it is no wonder that TLS 1.0 is sometimes called SSL 3.1 \(and it is not incorrect either\). SSL 3.0 and TLS 1.0 differ by only some minute details. TLS 1.1 and 1.2 are not yet widely supported, although there is impetus for that, because of possible weaknesses \(see below, for the "BEAST attack"\). SSLv3 and TLS 1.0 are supported "everywhere" \(even IE 6.0 knows them\).
 
 # **Context**
 
@@ -14,15 +14,10 @@ SSL aims at providing a secure bidirectional tunnel for arbitrary data. Consider
 
 TCP is reliable in the presence of "accidents", i.e. transmission errors due to flaky hardware, network congestion, people with smartphones who walk out range of a given base station, and other non-malicious events. However, an ill-intentioned individual \(the "attacker"\) with some access to the transport medium could read all the transmitted data and/or alter it intentionally, and TCP does not protect against that. Hence SSL.
 
-SSL_assumes_that it works over a TCP-like protocol, which provides a reliable stream; SSL does not implement reemission of lost packets and things like that. The attacker is supposed to be in power to disrupt communication completely in an unavoidable way \(for instance, he can cut the cables\) so SSL's job is to:
+SSL\_assumes\_that it works over a TCP-like protocol, which provides a reliable stream; SSL does not implement reemission of lost packets and things like that. The attacker is supposed to be in power to disrupt communication completely in an unavoidable way \(for instance, he can cut the cables\) so SSL's job is to:
 
-* _detect_
-  alterations \(the attacker must not be able to alter the data
-  _silently_
-  \);
-* ensure data
-  _confidentiality_
-  \(the attacker must not gain knowledge of the exchanged data\).
+* _detect _alterations \(the attacker must not be able to alter the data _silently_\);
+* ensure data _confidentiality _\(the attacker must not gain knowledge of the exchanged data\).
 
 SSL fulfills these goals to a large \(but not absolute\) extent.
 
@@ -81,9 +76,9 @@ The MAC is, usually,[HMAC](http://en.wikipedia.org/wiki/HMAC)with one of the usu
 
 # **Handshake**
 
-The_handshake_is a protocol which is played within the record protocol. Its goal is to establish the algorithms and keys which are to be used for the records. It consists of_messages_. Each handshake message begins with a four-byte header, one byte which describes the message type, then three bytes for the message length \(big-endian convention\). The successive handshake messages are then sent with records tagged with the "handshake" type \(first byte of the header of each record has value 22\).
+The_handshake\_is a protocol which is played within the record protocol. Its goal is to establish the algorithms and keys which are to be used for the records. It consists of\_messages_. Each handshake message begins with a four-byte header, one byte which describes the message type, then three bytes for the message length \(big-endian convention\). The successive handshake messages are then sent with records tagged with the "handshake" type \(first byte of the header of each record has value 22\).
 
-Note the layers: the handshake messages, complete with four-byte header, are then sent as records, and each record_also_has its own header. Furthermore, several handshake messages can be sent within the same record, and a given handshake message can be split over several records. From the point of view of the module which builds the handshake messages, the "records" are just a stream on which bytes can be sent; it is oblivious to the actual split of that stream into records.
+Note the layers: the handshake messages, complete with four-byte header, are then sent as records, and each record\_also\_has its own header. Furthermore, several handshake messages can be sent within the same record, and a given handshake message can be split over several records. From the point of view of the module which builds the handshake messages, the "records" are just a stream on which bytes can be sent; it is oblivious to the actual split of that stream into records.
 
 ## Full Handshake
 
@@ -125,7 +120,7 @@ The full handshake looks like this:
                                                  Certificate*
                                            ServerKeyExchange*
                                           CertificateRequest*
-                               
+
 <
 --------      ServerHelloDone
   Certificate*
@@ -136,7 +131,7 @@ The full handshake looks like this:
 >
 
                                            [ChangeCipherSpec]
-                               
+
 <
 --------             Finished
   Application Data             
@@ -144,7 +139,6 @@ The full handshake looks like this:
 -------
 >
      Application Data
-
 ```
 
 \(This schema has been shamelessly copied from the RFC.\)
@@ -155,7 +149,7 @@ We see the`ClientHello`and`ServerHello`. Then, the server sends a few other mess
   the server's certificate, which contains its public key. More on that below. This message is almost always sent, except if the cipher suite mandates a handshake without a certificate.
 * **ServerKeyExchange:**
   some extra values for the key exchange, if what is in the certificate is not sufficient. In particular, the "DHE" cipher suites use an
-  [ephemeral Diffie-Hellman](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+  [ephemeral Diffie-Hellman](http://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange)
   key exchange, which requires that message.
 * **CertificateRequest:**
   a message requesting that the client
@@ -185,11 +179,11 @@ The**Finished**message is a cryptographic checksum computed over all previous ha
 
 The server finally responds with its own`ChangeCipherSpec`then`Finished`. At that point, the handshake is finished, and the client and server may exchange application data \(in encrypted records tagged as such\).
 
-**To remember:**the client_suggests_but the server_chooses_. The cipher suite is in the hands of the server. Courteous servers are supposed to follow the preferences of the client \(if possible\), but they can do otherwise and some actually do \(e.g. as part of protection against BEAST\).
+**To remember:**the client_suggests\_but the server\_chooses_. The cipher suite is in the hands of the server. Courteous servers are supposed to follow the preferences of the client \(if possible\), but they can do otherwise and some actually do \(e.g. as part of protection against BEAST\).
 
 ## Abbreviated Handshake
 
-In the full handshake, the server sends a "session ID" \(i.e. a bunch of up to 32 bytes\) to the client. Later on, the client can come back and send the same session ID as part of his`ClientHello`. This means that the client still remembers the cipher suite and keys from the previous handshake and would like to reuse these parameters. If the server_also_remembers the cipher suite and keys, then it copies that specific session ID in its`ServerHello`, and then follows the**abbreviated handshake**:
+In the full handshake, the server sends a "session ID" \(i.e. a bunch of up to 32 bytes\) to the client. Later on, the client can come back and send the same session ID as part of his`ClientHello`. This means that the client still remembers the cipher suite and keys from the previous handshake and would like to reuse these parameters. If the server\_also\_remembers the cipher suite and keys, then it copies that specific session ID in its`ServerHello`, and then follows the**abbreviated handshake**:
 
 ```
   Client                                                Server
@@ -199,7 +193,7 @@ In the full handshake, the server sends a "session ID" \(i.e. a bunch of up to 3
 
                                                    ServerHello
                                             [ChangeCipherSpec]
-                                
+
 <
 --------             Finished
   [ChangeCipherSpec]
@@ -211,7 +205,6 @@ In the full handshake, the server sends a "session ID" \(i.e. a bunch of up to 3
 -------
 >
      Application Data
-
 ```
 
 The abbreviated handshake is shorter: less messages, no asymmetric cryptography business, and, most importantly,_reduced latency_. Web browsers and servers do that a lot. A typical Web browser will open a SSL connection with a full handshake, then do abbreviated handshakes for all other connections to the same server: the other connections it opens in parallel, and also the subsequent connections to the same server. Indeed, typical Web servers will close connections after 15 seconds of inactivity, but they will remember_sessions_\(the cipher suite and keys\) for a lot longer \(possibly for hours or even days\).
@@ -274,9 +267,9 @@ Less commonly used key exchange algorithms include:
 
 # **Certificates and Authentication**
 
-[Digital certificates](http://en.wikipedia.org/wiki/Public_key_certificate)are vessels for asymmetric keys. They are intended to solve key distribution. Namely, the client wants to use the server's_public key_. The attacker will try to make the client use the_attacker's_public key. So the client must have a way to make sure that it is using the right key.
+[Digital certificates](http://en.wikipedia.org/wiki/Public_key_certificate)are vessels for asymmetric keys. They are intended to solve key distribution. Namely, the client wants to use the server's_public key_. The attacker will try to make the client use the\_attacker's\_public key. So the client must have a way to make sure that it is using the right key.
 
-SSL is supposed to use[X.509](http://en.wikipedia.org/wiki/X.509). This is a standard for certificates. Each certificate is_signed_by a_Certification Authority_. The idea is that the client inherently knows the public keys of a handful of CA \(these are the "trust anchors" or "root certificates"\). With these keys, the client can_verify_the signature computed by a CA over a certificate which has been issued to the server. This process can be extended recursively: a CA can issue a certificate for another CA \(i.e._sign_the certificate structure which contains the other CA name and key\). A chain of certificates beginning with a root CA and ending with the server's certificate, with intermediate CA certificates in between, each certificate being signed relatively to the public key which is encoded in the previous certificate, is called, unimaginatively, a_certificate chain_.
+SSL is supposed to use[X.509](http://en.wikipedia.org/wiki/X.509). This is a standard for certificates. Each certificate is_signed\_by a\_Certification Authority_. The idea is that the client inherently knows the public keys of a handful of CA \(these are the "trust anchors" or "root certificates"\). With these keys, the client can_verify\_the signature computed by a CA over a certificate which has been issued to the server. This process can be extended recursively: a CA can issue a certificate for another CA \(i.e.\_sign\_the certificate structure which contains the other CA name and key\). A chain of certificates beginning with a root CA and ending with the server's certificate, with intermediate CA certificates in between, each certificate being signed relatively to the public key which is encoded in the previous certificate, is called, unimaginatively, a\_certificate chain_.
 
 So the client is supposed to do the following:
 
@@ -319,13 +312,13 @@ At any time, the client or the server can initiate a new handshake \(the server 
 * Upon seeing the path, the server may learn that this is for a part of its data which is supposed to be accessed only by clients authenticated with certificates. But the server did not ask for a client certificate in the handshake \(in particular because not-so-old Web browsers displayed freakish popups when asked for a certificate, in particular if they did not have one, so a server would refrain from asking a certificate if it did not have good reason to believe that the client has one and knows how to use it\).
 * Therefore, the server triggers a new handshake, this time requesting a certificate.
 
-There is an interesting weakness in the situation I just described; see[RFC 5746](http://tools.ietf.org/html/rfc5746)for a workaround. In a conceptual way, SSL transfers security characteristics only in the "forward" way. When doing a new handshake, whatever could be known about the client_before_the new handshake is still valid_after_\(e.g. if the client had sent a good username+password within the tunnel\) but not the other way round. In the situation above, the first HTTP request which was received_before_the new handshake is not covered by the certificate-based authentication of the second handshake, and it would have been chosen by he attacker ! Unfortunately, some Web servers just assumed that the client authentication from the second handshake extended to what was sent before that second handshake, and it allowed some nasty tricks from the attacker. RFC 5746 attempts at fixing that.
+There is an interesting weakness in the situation I just described; see[RFC 5746](http://tools.ietf.org/html/rfc5746)for a workaround. In a conceptual way, SSL transfers security characteristics only in the "forward" way. When doing a new handshake, whatever could be known about the client_before\_the new handshake is still valid\_after_\(e.g. if the client had sent a good username+password within the tunnel\) but not the other way round. In the situation above, the first HTTP request which was received\_before\_the new handshake is not covered by the certificate-based authentication of the second handshake, and it would have been chosen by he attacker ! Unfortunately, some Web servers just assumed that the client authentication from the second handshake extended to what was sent before that second handshake, and it allowed some nasty tricks from the attacker. RFC 5746 attempts at fixing that.
 
 # **Alerts**
 
-_Alert messages_are just warning and error messages. They are rather uninteresting except when they could be subverted from some attacks \(see later on\).
+\_Alert messages\_are just warning and error messages. They are rather uninteresting except when they could be subverted from some attacks \(see later on\).
 
-There_is_an important alert message, called`close_notify`: it is a message which the client or the server sends when it wishes to close the connection. Upon_receiving_this message, the server or client must also respond with a`close_notify`and then consider the tunnel to be closed \(but the_session_is still valid, and can be reused in an ulterior abbreviated handshake\). The interesting part is that these alert messages are, like all other records, protected by the encryption and MAC. Thus, the connection closure is covered by the cryptographic umbrella.
+There\_is\_an important alert message, called`close_notify`: it is a message which the client or the server sends when it wishes to close the connection. Upon\_receiving\_this message, the server or client must also respond with a`close_notify`and then consider the tunnel to be closed \(but the\_session\_is still valid, and can be reused in an ulterior abbreviated handshake\). The interesting part is that these alert messages are, like all other records, protected by the encryption and MAC. Thus, the connection closure is covered by the cryptographic umbrella.
 
 This is important in the context of \(old\) HTTP, where some data can be sent by the server without an explicit "content-length": the data extends until the end of the transport stream. Old HTTP with SSLv2 \(which did not have the`close_notify`\) allowed an attacker to force a connection close \(at the TCP level\) which the client would have taken for a normal close; thus, the attacker could truncate the data without being caught. This is one of the problems with SSLv2 \(arguably, the worst\) and SSLv3 fixes it. Note that "modern" HTTP uses "Content-Length" headers and/or chunked encoding, which is not vulnerable to such truncation, even if the SSL layer allowed it. Still, it is nice to know that SSL offers protection on closure events.
 
