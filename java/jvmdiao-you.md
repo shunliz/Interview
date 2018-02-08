@@ -6,7 +6,7 @@
 
    **典型设置：**
 
-   * java   
+   * java  
      **-Xmx3550m -Xms3550m -Xmn2g**  
      **-Xss128k**
 
@@ -28,7 +28,7 @@
      **-Xss128k**  
      ：设置每个线程的堆栈大小。JDK5.0以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。更具应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
 
-   * java -Xmx3550m -Xms3550m -Xss128k   
+   * java -Xmx3550m -Xms3550m -Xss128k  
      **-XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MaxPermSize=16m -XX:MaxTenuringThreshold=0**
 
      ---
@@ -66,7 +66,7 @@
    **典型配置**  
       ：
 
-   * java -Xmx3800m -Xms3800m -Xmn2g -Xss128k   
+   * java -Xmx3800m -Xms3800m -Xmn2g -Xss128k  
      **-XX:+UseParallelGC -XX:ParallelGCThreads=20**
 
      ---
@@ -80,7 +80,7 @@
      **-XX:ParallelGCThreads=20**  
      ：配置并行收集器的线程数，即：同时多少个线程一起进行垃圾回收。此值最好配置与处理器数目相等。
 
-   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20   
+   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20  
      **-XX:+UseParallelOldGC**
 
      ---
@@ -97,7 +97,7 @@
      **:**  
      设置每次年轻代垃圾回收的最长时间，如果无法满足此时间，JVM会自动调整年轻代大小，以满足此值。
 
-   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC  -XX:MaxGCPauseMillis=100   
+   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC  -XX:MaxGCPauseMillis=100  
      **-XX:+UseAdaptiveSizePolicy**
 
      ---
@@ -112,7 +112,7 @@
      **典型配置**  
      ：
 
-   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20   
+   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20  
      **-XX:+UseConcMarkSweepGC -XX:+UseParNewGC**
 
      ---
@@ -123,7 +123,7 @@
      **-XX:+UseParNewGC**  
      :设置年轻代为并行收集。可与CMS收集同时使用。JDK5.0以上，JVM会根据系统配置自行设置，所以无需再设置此值。
 
-   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC   
+   * java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC  
      **-XX:CMSFullGCsBeforeCompaction=5 **  
      **-XX:+UseCMSCompactAtFullCollection**
 
@@ -256,49 +256,50 @@
 
      , 0.0757599 secs\]
 
-   * **-Xloggc:filename**
+   * **-Xloggc:filename**  
      :与上面几个配合使用，把相关日志信息记录到文件以便分析。
 
-4. **常见配置汇总**
+4. **常见配置汇总**  
    1. 堆设置
-      * **-Xms**
-        :初始堆大小
-      * **-Xmx**
-        :最大堆大小
-      * **-XX:NewSize=n**
-        :设置年轻代大小
-      * **-XX:NewRatio=n:**
-        设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4
-      * **-XX:SurvivorRatio=n**
-        :年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
-      * **-XX:MaxPermSize=n**
-        :设置持久代大小
-   2. 收集器设置
-      * **-XX:+UseSerialGC**
-        :设置串行收集器
-      * **-XX:+UseParallelGC**
-        :设置并行收集器
-      * **-XX:+UseParalledlOldGC**
-        :设置并行年老代收集器
-      * **-XX:+UseConcMarkSweepGC**
-        :设置并发收集器
-   3. 垃圾回收统计信息
-      * **-XX:+PrintGC**
-      * **-XX:+PrintGCDetails**
-      * **-XX:+PrintGCTimeStamps**
-      * **-Xloggc:filename**
-   4. 并行收集器设置
-      * **-XX:ParallelGCThreads=n**
-        :设置并行收集器收集时使用的CPU数。并行收集线程数。
-      * **-XX:MaxGCPauseMillis=n**
-        :设置并行收集最大暂停时间
-      * **-XX:GCTimeRatio=n**
-        :设置垃圾回收时间占程序运行时间的百分比。公式为1/\(1+n\)
-   5. 并发收集器设置
-      * **-XX:+CMSIncrementalMode**
-        :设置为增量模式。适用于单CPU情况。
-      * **-XX:ParallelGCThreads=n**
-        :设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
+
+   * **-Xms**
+     :初始堆大小
+   * **-Xmx**
+     :最大堆大小
+   * **-XX:NewSize=n**
+     :设置年轻代大小
+   * **-XX:NewRatio=n:**
+     设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4
+   * **-XX:SurvivorRatio=n**
+     :年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
+   * **-XX:MaxPermSize=n**
+     :设置持久代大小
+     1. 收集器设置
+   * **-XX:+UseSerialGC**
+     :设置串行收集器
+   * **-XX:+UseParallelGC**
+     :设置并行收集器
+   * **-XX:+UseParalledlOldGC**
+     :设置并行年老代收集器
+   * **-XX:+UseConcMarkSweepGC**
+     :设置并发收集器
+     1. 垃圾回收统计信息
+   * **-XX:+PrintGC**
+   * **-XX:+PrintGCDetails**
+   * **-XX:+PrintGCTimeStamps**
+   * **-Xloggc:filename**
+     1. 并行收集器设置
+   * **-XX:ParallelGCThreads=n**
+     :设置并行收集器收集时使用的CPU数。并行收集线程数。
+   * **-XX:MaxGCPauseMillis=n**
+     :设置并行收集最大暂停时间
+   * **-XX:GCTimeRatio=n**
+     :设置垃圾回收时间占程序运行时间的百分比。公式为1/\(1+n\)
+     1. 并发收集器设置
+   * **-XX:+CMSIncrementalMode**
+     :设置为增量模式。适用于单CPU情况。
+   * **-XX:ParallelGCThreads=n**
+     :设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
 
 **四、调优总结**
 
@@ -325,13 +326,13 @@
 
      减少年轻代和年老代花费的时间，一般会提高应用的效率
 
-   * **吞吐量优先的应用**
+   * **吞吐量优先的应用**  
      ：一般吞吐量优先的应用都有一个很大的年轻代和一个较小的年老代。原因是，这样可以尽可能回收掉大部分短期对象，减少中期的对象，而年老代尽存放长期存活对象。
 
-3. **较小堆引起的碎片问题**
-   ---
+3. ## **较小堆引起的碎片问题**
 
    因为年老代的并发收集器使用标记、清除算法，所以不会对堆进行压缩。当收集器回收时，他会把相邻的空间进行合并，这样可以分配给较大的对象。但是，当堆空间较小时，运行一段时间以后，就会出现“碎片”，如果并发收集器找不到足够的空间，那么并发收集器将会停止，然后使用传统的标记、清除方式进行回收。如果出现“碎片”，可能需要进行如下配置：
+
    * **-XX:+UseCMSCompactAtFullCollection**
      ：使用并发收集器时，开启对年老代的压缩。
    * **-XX:CMSFullGCsBeforeCompaction=0**
