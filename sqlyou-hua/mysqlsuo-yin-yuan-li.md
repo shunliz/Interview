@@ -310,6 +310,8 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 
 由于不是最左前缀，索引这样的查询显然用不到索引。
 
+
+
 ### 情况五：匹配某列的前缀字符串。
 
 ![](/assets/mysqlindex13.png)
