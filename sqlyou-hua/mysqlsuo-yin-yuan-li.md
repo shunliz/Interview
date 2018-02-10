@@ -285,6 +285,8 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 
 当查询条件精确匹配索引的左边连续一个或几个列时，如&lt;emp\_no&gt;或&lt;emp\_no, title&gt;，索引可以被用到，但是只能用到一部分，即条件所组成的最左前缀。上面的查询从分析结果看用到了PRIMARY索引，但是key\_len为4，说明只用到了索引的第一列前缀。
 
+
+
 ### 情况三：查询条件用到了索引中列的精确匹配，但是中间某个条件未提供。
 
 ![](/assets/mysqlindex5.png)
@@ -309,8 +311,6 @@ MySQL官方文档中关于此数据库的页面为[http://dev.mysql.com/doc/empl
 ![](/assets/mysqlindex12.png)
 
 由于不是最左前缀，索引这样的查询显然用不到索引。
-
-
 
 ### 情况五：匹配某列的前缀字符串。
 
