@@ -55,6 +55,7 @@
 * [Web](web.md)
   * [javascript](web/javascript.md)
     * [JS实现继承的几种方式](web/javascript/jsshi-xian-ji-cheng-de-ji-zhong-fang-shi.md)
+    * [javascript核心概念](web/javascript/javascripthe-xin-gai-nian.md)
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
