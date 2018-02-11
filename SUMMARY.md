@@ -54,6 +54,7 @@
 * C/C++
 * [Web](web.md)
   * [javascript](web/javascript.md)
+    * [JS实现继承的几种方式](web/javascript/jsshi-xian-ji-cheng-de-ji-zhong-fang-shi.md)
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
