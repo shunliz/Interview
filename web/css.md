@@ -73,8 +73,13 @@ CSS盒模型
 
 1.padding，border，margin都是可选的，默认值为0，但是浏览器会自行设置元素的margin和padding，通过在css样式表中设置
 
-| 1234 | `*{margin:0;padding:0}` |
-| :--- | :--- |
+
+
+```
+*{margin:0;padding:0}
+```
+
+
 
 
 
