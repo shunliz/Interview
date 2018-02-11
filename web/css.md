@@ -104,34 +104,12 @@ CSS盒模型
 HTML代码
 
 ```
-<
-div 
-class
-=
-"
-parent
-"
->
-<
-span 
-class
-=
-"
-block
-"
->
-块级元素
-<
-/span
->
-<
-/div
->
+ <div class="parent"> 
+     <span class="block">块级元素</span> 
+ </div>
 ```
 
 CSS代码
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ```
 .parent{
@@ -139,30 +117,18 @@ CSS代码
 }
  
 div {
-    background: #eeb3b3 none repeat scroll 
-0
-0
-;
+    background: #eeb3b3 none repeat scroll 0 0;
 }
  
 .block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: auto;
-    margin
--
-right: 100px;
+    margin-left: auto;
+    margin-right: 100px;
     padding: 30px;
     width: 100px;
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425115558912-1676554876.jpg)
 
@@ -175,28 +141,17 @@ right: 100px;
 使用auto可以弥补实际值与所需总和的差距，如果三个属性都设置了特定值，但是总和不等于父级元素的width。  
 修改上面例子中的margin-left为100px，即
 
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
-
 ```
 .block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: 100px;
-    margin
--
-right: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 30px;
     width: 100px;
  
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425115727803-1190688220.jpg)
 
@@ -211,28 +166,17 @@ right: 100px;
 如果margin-left和margin-right都设置特定值，width设置为auto，则width将会等于某个特定值以达到父级元素的width。  
 如果将width修改为auto，即：
 
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
-
 ```
 .block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: 100px;
-    margin
--
-right: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 30px;
     width: auto;
  
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425115829819-815362395.jpg)
 
@@ -253,29 +197,17 @@ margin-left和margin-right的值会被设置为相等，使得元素居中
 
 ###### 某个外边距和width设置成auto {#某个外边距和width设置成auto}
 
-如果设置某个外边距和width为auto，则设置为auto的外边距会为0，width会设置为所需的值来填充父级元素。
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
+如果设置某个外边距和width为auto，则设置为auto的外边距会为0，width会设置为所需的值来填充父级元素。.block {
 
 ```
-.block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: auto;
-    margin
--
-right: 100px;
+    margin-left: auto;
+    margin-right: 100px;
     padding: 30px;
     width: auto;
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425120004756-1501505357.jpg)
 
@@ -287,27 +219,16 @@ right: 100px;
 
 如果margin和width都设置为auto，则两个外边距会设置为0，width会尽可能宽。
 
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
-
 ```
 .block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: auto;
-    margin
--
-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 30px;
     width: auto;
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425120050975-1471192702.jpg)
 
@@ -320,29 +241,16 @@ right: auto;
 7个属性只要都是大于等于0的值，总和总是等于父级元素的width，不会超过父级元素的区域  
 但是可以通过制定负外边距来得到比父级元素width更大的区域
 
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
-
 ```
 .block {
-    background: #ffd800 none repeat scroll 
-0
-0
-;
+    background: #ffd800 none repeat scroll 0 0;
     display: block;
-    margin
--
-left: 100px;
-    margin
--right: -
-400px;
+    margin-left: 100px;
+    margin-right: -400px;
     padding: 30px;
     width: auto;
 }
 ```
-
-[![](https://common.cnblogs.com/images/copycode.gif "复制代码")](javascript:void%280%29;)
-
-
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425120142928-1583158137.jpg)
 
@@ -371,33 +279,9 @@ left: 100px;
 html代码
 
 ```
-<
-div 
-class
-=
-"
-m20
-"
->
- 外边距20px 
-<
-/div
->
-<
-div 
-class
-=
-"
-m10
-"
->
- 外边距10px 
-<
-/div
->
+<div class="m20"> 外边距20px </div>
+<div class="m10"> 外边距10px </div>
 ```
-
-
 
 css代码
 
@@ -405,8 +289,6 @@ css代码
 .m20 { padding: 20px; }
 .m10 { padding: 10px; }
 ```
-
-
 
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425120301131-1683388013.png)
 
