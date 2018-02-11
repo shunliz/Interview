@@ -115,11 +115,11 @@ CSS代码
 .parent{
     width:600px
 }
- 
+
 div {
     background: #eeb3b3 none repeat scroll 0 0;
 }
- 
+
 .block {
     background: #ffd800 none repeat scroll 0 0;
     display: block;
@@ -149,7 +149,7 @@ div {
     margin-right: 100px;
     padding: 30px;
     width: 100px;
- 
+
 }
 ```
 
@@ -174,7 +174,7 @@ div {
     margin-right: 100px;
     padding: 30px;
     width: auto;
- 
+
 }
 ```
 
@@ -293,6 +293,8 @@ css代码
 ![](https://images2015.cnblogs.com/blog/1137133/201704/1137133-20170425120301131-1683388013.png)
 
 如图所示，两个div标签的外边距分别是20px，10px，但是最终两个div之间的距离是20px，而不是20+10=30px
+
+
 
 #### 行内元素的盒模型 {#行内元素的盒模型}
 
