@@ -2,6 +2,8 @@ iptables中定义有表，分别表示提供的功能，有filter表（实现包
 
 一条链上可定义不同功能的规则，检查数据包时将根据上面的优先级顺序检查
 
+
+
 ![](/assets/iptables1.png)![](/assets/iptables2.png)主机发送数据包时，流程则是⑤---&gt;⑥
 
 ![](/assets/iptables3.png)
