@@ -61,7 +61,7 @@
 * 职业
 * 存储
 * 云计算
-  * openstack
+  * [openstack](openstack.md)
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
