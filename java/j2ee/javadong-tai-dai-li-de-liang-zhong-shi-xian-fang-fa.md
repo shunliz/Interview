@@ -119,8 +119,8 @@ CGLIB的核心类：
     Object o = methodProxy.invokeSuper\(proxy, args\);//虽然第一个参数是被代理对象，也不会出现死循环的问题。
 
 net.sf.cglib.proxy.MethodInterceptor接口是最通用的回调（callback）类型，它经常被基于代理的AOP用来实现拦截（intercept）方法的调用。这个接口只定义了一个方法  
-public Object intercept\(Object object, java.lang.reflect.Method method,  
-Object\[\] args, MethodProxy proxy\) throws Throwable;
+public Object intercept(Object object, java.lang.reflect.Method method,  
+Object[] args, MethodProxy proxy) throws Throwable;
 
 第一个参数是代理对像，第二和第三个参数分别是拦截的方法和方法的参数。原来的方法可能通过使用java.lang.reflect.Method对象的一般反射调用，或者使用 net.sf.cglib.proxy.MethodProxy对象调用。net.sf.cglib.proxy.MethodProxy通常被首选使用，因为它更快。
 
