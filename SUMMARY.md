@@ -6,7 +6,7 @@
     * [堆排序](suan-fa/pai-xu/dui-pai-xu.md)
     * [快速排序](suan-fa/pai-xu/kuai-su-pai-xu.md)
   * [查找](suan-fa/cha-zhao.md)
-  * 递归
+  * [递归](suan-fa/di-gui.md)
   * [动态规划](suan-fa/dong-tai-gui-hua.md)
     * [LCSs](suan-fa/lcss.md)
   * [KMP](suan-fa/kmp.md)
