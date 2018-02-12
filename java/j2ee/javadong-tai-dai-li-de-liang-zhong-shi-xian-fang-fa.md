@@ -114,8 +114,6 @@ Cglib是一个优秀的动态代理框架，它的底层使用ASM在内存中动
 
 CGLIB的核心类：  
     net.sf.cglib.proxy.Enhancer – 主要的增强类
-
-  
     net.sf.cglib.proxy.MethodInterceptor – 主要的方法拦截类，它是Callback接口的子接口，需要用户实现  
     net.sf.cglib.proxy.MethodProxy – JDK的java.lang.reflect.Method类的代理类，可以方便的实现对源对象方法的调用,如使用：  
     Object o = methodProxy.invokeSuper\(proxy, args\);//虽然第一个参数是被代理对象，也不会出现死循环的问题。
