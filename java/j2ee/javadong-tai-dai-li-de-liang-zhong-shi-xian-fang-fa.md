@@ -178,7 +178,8 @@ getName
 ++++++before CGLIB$getName$0++++++  
 ++++++before CGLIB$getAge$1++++++  
 getAge  
-------getAge------  
+------getAge------ 
+ 
 ++++++before CGLIB$getAge$1++++++
 
 # 静态代理
