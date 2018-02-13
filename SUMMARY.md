@@ -69,7 +69,7 @@
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
   * [kafka](da-shu-ju/kafka.md)
-  * hadoop
+  * [hadoop](da-shu-ju/hadoop.md)
   * [设计](da-shu-ju/she-ji.md)
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
 * [python](python.md)
