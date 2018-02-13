@@ -155,7 +155,7 @@
    2. term-based：全局的index及其partition
       1. 写操作更复杂了：所有数据库都不支持“分布式事务”？
 3. Rebalancing
-   1. 不要使用 % N方法，减少data move的开销！
+   1. 不要使用 % N方法，减少data move的开销！
    2. 解决方法1：一个物理node上分配多个partition
       1. 一开始就固定住总的partition数？node与partition的关联需要手工维护？
       2. how to 选择正确的总partition数？？
