@@ -67,7 +67,7 @@
   * [qeum-kvm](qeum-kvm.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
-  * storm
+  * [storm](da-shu-ju/storm.md)
   * kafka
   * hadoop
   * [设计](da-shu-ju/she-ji.md)
