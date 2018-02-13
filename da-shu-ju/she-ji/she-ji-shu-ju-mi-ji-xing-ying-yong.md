@@ -69,14 +69,7 @@
    4. 优化\*
 7. LSM-树后台压缩影响性能，不如B-树可预测（实质是均摊了）
 8. 其他索引
-   1. secondary（Map
-      &lt;
-      K, List
-      &lt;
-      V
-      &gt;
-      &gt;
-      ）
+   1. secondary（Map&lt;K, List&lt;V&gt;&gt;）
    2. clustered（value in index）
    3. 多列组合
    4. 全文与fuzzy
