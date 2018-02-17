@@ -74,4 +74,6 @@
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
 * [python](python.md)
   * [eventlet原理](python/eventletyuan-li.md)
+* 系统优化
+  * [性能优化20条](xing-neng-you-hua-20-tiao.md)
 
