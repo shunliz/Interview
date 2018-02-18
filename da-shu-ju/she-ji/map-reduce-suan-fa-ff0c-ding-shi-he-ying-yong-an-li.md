@@ -525,9 +525,7 @@ class Mapper
 
 # Machine Learning and Math MapReduce Algorithms
 
-* C. T. Chu
-  _et al_
-  provides an excellent description of  machine learning algorithms for MapReduce in the article 
+* C. T. Chu _et al _provides an excellent description of  machine learning algorithms for MapReduce in the article 
   [Map-Reduce for Machine Learning on Multicore](http://www.cs.stanford.edu/people/ang//papers/nips06-mapreducemulticore.pdf)
   .
 * FFT using MapReduce: 
