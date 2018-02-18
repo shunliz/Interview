@@ -72,6 +72,7 @@
   * [hadoop](da-shu-ju/hadoop.md)
   * [设计](da-shu-ju/she-ji.md)
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
+    * [Map reduce 算法，定式和应用案例](da-shu-ju/she-ji/map-reduce-suan-fa-ff0c-ding-shi-he-ying-yong-an-li.md)
 * [python](python.md)
   * [eventlet原理](python/eventletyuan-li.md)
 * 系统优化
