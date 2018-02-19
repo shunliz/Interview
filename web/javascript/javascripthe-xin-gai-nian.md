@@ -198,20 +198,11 @@ JavaScript是一种弱类型语言，其本身并不像Java等语言那样对数
 
 **模块化**
 
-**          
-**
-
 JavaScript模块化的历史由来已久，也并非小编用几行的篇幅就能一语带过，在这仅对它的特性及应用场景进行笼统的说明，如有对其原委感兴趣的读者，可以搜索其他更详细的相关资料。
 
 先来说**CommonJS**，CommonJS模块化规范主要应用于服务器端编程，加载模块的方式属于同步加载，只有在加载完成之后才能执行后续操作。一个.js文件就是一个CommonJS模块，在服务器端的模块文件一般都保存在本地硬盘，所以加载速度较快。每一个模块都有自己的作用域，里面定义的变量、函数、类都是私有的，对其他文件不可见。NodeJS、webpack就是以CommonJS规范的形式来实现的。
 
-**          
-**
-
 **CommonJS模块特点：**
-
-**          
-**
 
 > 所有代码都运行在模块作用域，不会污染全局作用域。
 >
@@ -233,21 +224,21 @@ JavaScript模块化的历史由来已久，也并非小编用几行的篇幅就�
 
 **类式继承**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5OIibZz9Oe5I4oqNUeVFgQ8OMiaM7YpiaCKCPhl8aBicofejfX2I6UbIx4Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 **原型链继承**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5u4KSDhhmbF1MpTMLZaQ6cT5OsXHOicfXmib313Yf6279F3bmnq4Ov46A/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 **继承**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5nkUicSvaOOKghkTVCgHyQjZ2W34VLWRUcRQ8uyl9dX0H7zR6yIPLKAw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
@@ -258,14 +249,14 @@ JavaScript并不是专门的函数式编程语言，但却能够应用函数式�
 
 **使用非函数式的方式计算数组中元素的平均值和标准差**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5cG8CibbAbHOBe79UxakxjL9cYPN9HbErqma1fVvD3ic0H2iaZmJuoDDLA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 **使用函数式的编程方式**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5xu8RYD4Zxrfdz3scH3dngLcia1DeFJjUy4fRWENTrzRWlib2bcMtlF1w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
@@ -312,14 +303,14 @@ JS的跨域访问，就是在不同的域名下进行HTTP请求与响应。JSONP
 
 **客户端页面代码如下**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5Bvm0CMO30EQpLhVO9w3ntckAwhOvGvvZhvkO93UttlTr3wib6ztCGlA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 **服务端需要拼接的回调函数及返回数据**
 
-**          
+**            
 **
 
 ![](http://mmbiz.qpic.cn/mmbiz_jpg/BC87ECNQcz0vbWmMJNS6fkoEb9CorAA5KUQNg4nXFCxeSibG0Vp7Tv6rJPm9DL74ibRwtttNWV6iavXVQ7ntEgEQw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
