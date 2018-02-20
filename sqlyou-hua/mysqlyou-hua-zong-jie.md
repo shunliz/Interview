@@ -79,7 +79,6 @@
 
 
 ```
-
 1 select person_id, @semester_id, 301003, 0, @one_marks, assign_date, @one_marks
 2          from hom_assignmentinfo   ha, hom_assign_class hac
 3          where ha.assignment_id = hac.assignment_id
@@ -180,7 +179,7 @@
 
 **　三、数据库参数配置**
 
-      最重要的参数就是[内存](http://product.it168.com/list/b/0205_1.shtml)，我们主要用的innodb引擎，所以下面两个参数调的很大
+最重要的参数就是[内存](http://product.it168.com/list/b/0205_1.shtml)，我们主要用的innodb引擎，所以下面两个参数调的很大
 
 　　\# Additional memory pool that is used by InnoDB to store metadata
 
@@ -236,8 +235,7 @@
 
 　　缓存访问率的计算方法Threads\_created/Connections。
 
-**  
-**
+
 
 **      四、合理的硬件资源和**[**操作系统**](http://product.it168.com/list/b/0501_1.shtml)
 
