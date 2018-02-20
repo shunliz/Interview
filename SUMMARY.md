@@ -25,6 +25,7 @@
   * [SQL优化](sqlyou-hua.md)
     * [索引最左前缀原理](sqlyou-hua/suo-yin-zui-zuo-qian-zhui-yuan-li.md)
     * [mysql索引原理](sqlyou-hua/mysqlsuo-yin-yuan-li.md)
+    * [mysql优化总结](sqlyou-hua/mysqlyou-hua-zong-jie.md)
   * [常见SQL语句](chang-jian-sql-yu-ju.md)
   * [数据库范式](shu-ju-ku-fan-shi.md)
   * 事务
