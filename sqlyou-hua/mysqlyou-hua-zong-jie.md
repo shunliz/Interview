@@ -83,6 +83,36 @@
 
 
 
+```
+
+1 select person_id, @semester_id, 301003, 0, @one_marks, assign_date, @one_marks
+2          from hom_assignmentinfo   ha, hom_assign_class hac
+3          where ha.assignment_id = hac.assignment_id
+4               and ha.assign_date between @time_begin and @time_end
+5               and ha.assignment_id not in
+6                    (
+7                         select haa.assignment_id from hom_assignment_appraise haa, hom_check_assignment hca
+8                          where haa.appraise_id = hca.appraise_id and haa.if_submit=1
+9                               and (
+10                                      (hca.recheck_state = 3004001 and hca.check_result in (3003002, 3003003) )
+11                                       or
+12                                      (hca.recheck_state = 3004002 and hca.recheck_result in (3003002, 3003003))
+13                                    )
+14                    )
+15               and ha.assignment_id not in
+16                    (
+17                         select assignment_id from hom_assignment_appraise where if_submit=0 and result_type = 0
+18                    )
+19               and ha.assignment_id in     
+20                    (
+21                         select haa.assignment_id from hom_assignment_appraise haa, hom_check_assignment hca
+22                          where haa.appraise_id = hca.appraise_id and haa.if_submit=1
+23                               and hca.check_result in (3003002, 3003003)
+24                    );
+```
+
+
+
 　　这还只是个中间过程，这要是用程序实时处理，即使编程人员不罢工，数据库也会歇了。
 
 **　　选择合适的引擎**
