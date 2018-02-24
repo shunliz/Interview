@@ -61,8 +61,6 @@ CAS框架：CAS（Central Authentication Service）是实现SSO单点登录的�
 
 5\)、系统A将受限资源返给用户。
 
-
-
 ![](http://img.blog.csdn.net/20160905134415791 "这里写图片描述")  
 **已登录用户首次访问应用群中系统B时：**
 
@@ -110,7 +108,9 @@ CAS框架：CAS（Central Authentication Service）是实现SSO单点登录的�
 3\)、问：登录成功后，认证中心重定向请求到系统A，认证通过令牌是如何附加发送给系统A的？  
 答：重定向之后的地址栏变成：`http://a:8080/?ticket=ST-XXXX-XXX`，将票据以ticket为参数名的方式通过地址栏发送给系统A
 
-4\)、问：系统A验证令牌，怎样操作证明用户登录的？  
+4\)、问：系统A验证令牌，怎样操作证明用户登录的？
+
+  
 答：系统A通过地址栏获取ticket的参数值ST票据，然后从后台将ST发送给CAS server认证中心验证，验证ST有效后，CAS server返回当前用户登录的相关信息，系统A接收到返回的用户信息，并为该用户创建session会话，会话id由cookie维护，来证明其已登录。
 
 5\)、问：登录B系统，认证中心是如何判断用户已经登录的？  
