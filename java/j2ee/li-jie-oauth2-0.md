@@ -364,5 +364,5 @@ B步骤中，认证服务器向客户端发送访问令牌，下面是一个例�
      grant_type=refresh_token&refresh_token=tGzv3JOkF0XG5Qx2TlKWIA
 ```
 
-
+![](/assets/oauth20.png)
 
