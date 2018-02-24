@@ -110,10 +110,11 @@ CAS框架：CAS（Central Authentication Service）是实现SSO单点登录的�
 
 4\)、问：系统A验证令牌，怎样操作证明用户登录的？
 
-  
 答：系统A通过地址栏获取ticket的参数值ST票据，然后从后台将ST发送给CAS server认证中心验证，验证ST有效后，CAS server返回当前用户登录的相关信息，系统A接收到返回的用户信息，并为该用户创建session会话，会话id由cookie维护，来证明其已登录。
 
-5\)、问：登录B系统，认证中心是如何判断用户已经登录的？  
+5\)、问：登录B系统，认证中心是如何判断用户已经登录的？
+
+  
 答：在系统A登录成功后，用户和认证中心之间建立起了全局会话，这个全局会话就是TGT\(Ticket Granting Ticket\)，TGT位于CAS服务器端，TGT并没有放在Session中，也就是说，CAS全局会话的实现并没有直接使用Session机制，而是利用了Cookie自己实现的，这个Cookie叫做TGC\(Ticket Granting Cookie\)，它存放了TGT的id,保存在用户浏览器上。  
 相关内容分析可以查看：[《SSO CAS单点系列》之 实操！轻松玩转SSO CAS就这么简单\(相识篇\)](http://www.imooc.com/article/3720)
 
