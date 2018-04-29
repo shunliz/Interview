@@ -56,6 +56,7 @@
     * [聊聊并发（四）——深入分析ConcurrentHashMap](java/liao-liao-bing-fa-ff08-si-ff09-2014-2014-shen-ru-fen-xi-concurrenthashmap.md)
     * [聊聊并发（五）——原子操作的实现原理](java/liao-liao-bing-fa-ff08-wu-ff09-2014-2014-yuan-zi-cao-zuo-de-shi-xian-yuan-li.md)
     * [java Thread](java/java-thread.md)
+    * [测试](java/ce-shi.md)
 * C/C++
 * [Web](web.md)
   * [javascript](web/javascript.md)
