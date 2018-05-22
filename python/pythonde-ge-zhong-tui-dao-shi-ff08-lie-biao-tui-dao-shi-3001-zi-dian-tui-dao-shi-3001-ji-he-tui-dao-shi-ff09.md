@@ -4,8 +4,6 @@
 * 字典\(dict\)推导式
 * 集合\(set\)推导式
 
-
-
 ### 一、列表推导式
 
 **1、使用\[\]生成list**
@@ -19,8 +17,6 @@ variable = [out_exp_res for out_exp in input_list if out_exp == 2]
   if out_exp == 2：　　根据条件过滤哪些值可以。
 ```
 
-
-
 例一：
 
 ```
@@ -28,8 +24,6 @@ multiples = [i for i in range(30) if i % 3 is 0]
 print(multiples)
 # Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
 ```
-
-
 
 例二：
 
@@ -41,8 +35,6 @@ print multiples
 #  Output: [0, 9, 36, 81, 144, 225, 324, 441, 576, 729]
 ```
 
-
-
 **2、使用\(\)生成generator**
 
 将俩表推导式的\[\]改成\(\)即可得到生成器。
@@ -52,10 +44,6 @@ multiples = (i for i in range(30) if i % 3 is 0)
 print(type(multiples))
 #  Output: <type 'generator'>
 ```
-
-
-
-
 
 ### 二、字典推导式
 
@@ -81,33 +69,11 @@ print mcase_frequency
 例子二：快速更换key和value
 
 ```
-mcase = {
-'
-a
-'
-: 10, 
-'
-b
-'
-: 34
-}
-mcase_frequency 
-= {v: k 
-for
- k, v 
-in
- mcase.items()}
-
-print
- mcase_frequency
-
-#
-  Output: {10: 'a', 34: 'b'}
+mcase = {'a': 10, 'b': 34}
+mcase_frequency = {v: k for k, v in mcase.items()}
+print mcase_frequency
+#  Output: {10: 'a', 34: 'b'}
 ```
-
-
-
-
 
 ### 三、集合推导式
 
@@ -116,18 +82,9 @@ print
 **例一：**
 
 ```
-squared = {x**2 
-for
- x 
-in
- [1, 1, 2
-]}
-
-print
-(squared)
-
-#
- Output: set([1, 4])
+squared = {x**2 for x in [1, 1, 2]}
+print(squared)
+# Output: set([1, 4])
 ```
 
 
