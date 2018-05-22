@@ -81,6 +81,7 @@
     * [Map reduce 算法，定式和应用案例](da-shu-ju/she-ji/map-reduce-suan-fa-ff0c-ding-shi-he-ying-yong-an-li.md)
 * [python](python.md)
   * [eventlet原理](python/eventletyuan-li.md)
+  * [python的各种推导式（列表推导式、字典推导式、集合推导式）](python/pythonde-ge-zhong-tui-dao-shi-ff08-lie-biao-tui-dao-shi-3001-zi-dian-tui-dao-shi-3001-ji-he-tui-dao-shi-ff09.md)
 * 系统优化
   * [性能优化20条](xing-neng-you-hua-20-tiao.md)
 * 区块链
