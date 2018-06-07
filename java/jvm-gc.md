@@ -30,8 +30,6 @@ b\)ObjB.obj - ObjA
 
 说了这么多，其实我们可以看到，所有的垃圾回收机制都是和引用相关的，那我们来具体的来看一下引用的分类，到底有哪些类型的引用？每种引用都是做什么的呢？
 
-
-
 Java中存在四种引用，每种引用如下：
 
 1、强引用
@@ -68,6 +66,8 @@ Object obj = new Object\(\);
 WeakReference&lt;Object&gt; wf = new WeakReference&lt;Object&gt;\(obj\);
 
 obj = null;
+
+
 
 wf.get\(\);//有时候会返回null
 
