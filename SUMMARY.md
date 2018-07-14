@@ -41,6 +41,7 @@
     * [java cas单点登录](java/j2ee/java-casdan-dian-deng-lu.md)
     * [理解OAUTH2.0](java/j2ee/li-jie-oauth2-0.md)
     * [乐观锁和悲观锁](java/j2ee/le-guan-suo-he-bei-guan-suo.md)
+    * [get post区别](java/j2ee/get-postqu-bie.md)
   * JVM
     * [JVM GC](java/jvm-gc.md)
     * [JVM 组成](java/jvm-zu-cheng.md)
