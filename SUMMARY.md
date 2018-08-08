@@ -23,7 +23,7 @@
     * [三次握手四次挥手](tcpip/san-ci-wo-shou-si-ci-hui-shou.md)
   * 路由
     * [直连路由](zhi-lian-lu-you.md)
-* 数据库
+* [数据库](shu-ju-ku.md)
   * [SQL优化](sqlyou-hua.md)
     * [索引最左前缀原理](sqlyou-hua/suo-yin-zui-zuo-qian-zhui-yuan-li.md)
     * [mysql索引原理](sqlyou-hua/mysqlsuo-yin-yuan-li.md)
