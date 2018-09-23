@@ -69,7 +69,8 @@
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
-* 存储
+* [存储](cun-chu.md)
+  * [RAID](cun-chu/raid.md)
 * 云计算
   * [openstack](openstack.md)
   * Docker
