@@ -68,6 +68,7 @@
     * [JS实现继承的几种方式](web/javascript/jsshi-xian-ji-cheng-de-ji-zhong-fang-shi.md)
     * [javascript核心概念](web/javascript/javascripthe-xin-gai-nian.md)
     * [javascript面试问题](web/javascript/javascriptmian-shi-wen-ti.md)
+    * [echarts内存泄漏](web/javascript/echartsnei-cun-xie-lou.md)
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
