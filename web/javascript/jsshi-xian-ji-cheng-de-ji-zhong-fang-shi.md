@@ -53,14 +53,12 @@ console.log(cat instanceof Cat); //true
    `new Animal()`
    这样的语句之后执行，不能放到构造器中
 2. 无法实现多继承
-3. 来自原型对象的引用属性是所有实例共享的（详细请看附录代码：
-   [示例1](javascript:void%280%29;)
-   ）
+3. 来自原型对象的引用属性是所有实例共享的（详细请看附录代码：[示例1](javascript:void%280%29;)）
 4. 创建子类实例时，无法向父类构造函数传参
 
 推荐指数：★★（3、4两大致命缺陷）
 
-**2017-8-17 10:21:43补充：感谢**[**MMHS**](http://home.cnblogs.com/u/1066372/)** 指出。缺点1中描述有误：可以在Cat构造函数中，为Cat实例增加实例属性。如果要新增原型属性和方法，则必须放在`new Animal()`这样的语句之后执行。**
+**2017-8-17 10:21:43补充：感谢**[**MMHS**](http://home.cnblogs.com/u/1066372/)** 指出。缺点1中描述有误：可以在Cat构造函数中，为Cat实例增加实例属性。如果要新增原型属性和方法，则必须放在**`new Animal()`**这样的语句之后执行。**
 
 ### 2、构造继承
 
@@ -93,8 +91,6 @@ console.log(cat instanceof Cat); // true
 3. 无法实现函数复用，每个子类都有父类实例函数的副本，影响性能
 
 推荐指数：★★（缺点3）
-
-
 
 ### 3、实例继承
 
@@ -181,7 +177,6 @@ console.log(cat.name);
 console.log(cat.sleep());
 console.log(cat instanceof Animal); // true
 console.log(cat instanceof Cat); // true
-
 ```
 
 特点：
@@ -197,8 +192,6 @@ console.log(cat instanceof Cat); // true
 1. 调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）
 
 推荐指数：★★★★（仅仅多消耗了一点内存）
-
-
 
 ### 6、寄生组合继承
 
