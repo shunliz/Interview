@@ -69,6 +69,7 @@
     * [javascript核心概念](web/javascript/javascripthe-xin-gai-nian.md)
     * [javascript面试问题](web/javascript/javascriptmian-shi-wen-ti.md)
     * [echarts内存泄漏](web/javascript/echartsnei-cun-xie-lou.md)
+    * [this,call,bind,apply](web/javascript/thiscallbindapply.md)
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
