@@ -70,6 +70,7 @@
     * [javascript面试问题](web/javascript/javascriptmian-shi-wen-ti.md)
     * [echarts内存泄漏](web/javascript/echartsnei-cun-xie-lou.md)
     * [this,call,bind,apply](web/javascript/thiscallbindapply.md)
+    * [javascript闭包](web/javascript/javascriptbi-bao.md)
   * [html](web/html.md)
   * [css](web/css.md)
 * 职业
