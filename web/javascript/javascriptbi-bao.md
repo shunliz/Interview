@@ -133,8 +133,8 @@ Javascript语言的特殊之处，就在于函数内部可以直接读取全局�
 > var object = {  
 > 　　　　name : "My Object",
 >
->       getNameFunc : function\(\){  
-> 　　　　　　return function\(\){  
+>       getNameFunc : function(){  
+> 　　　　　　return function(){  
 > 　　　　　　　　return this.name;  
 > 　　　　　　};
 >
