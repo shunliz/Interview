@@ -99,6 +99,7 @@
   * [区块链特征](qu-kuai-lian-te-zheng.md)
 * go
   * [go代码调试](godai-ma-diao-shi.md)
-* Devops
+* [Devops](devops.md)
   * [gradle入门](gradleru-men.md)
+  * [红帽金融行业 DevOps 案例分享](hong-mao-jin-rong-xing-ye-devops-an-li-fen-xiang.md)
 
