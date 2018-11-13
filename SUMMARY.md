@@ -9,6 +9,7 @@
   * [递归](suan-fa/di-gui.md)
   * [动态规划](suan-fa/dong-tai-gui-hua.md)
     * [LCSs](suan-fa/lcss.md)
+    * [动态规划例题](suan-fa/dong-tai-gui-hua-li-ti.md)
   * [KMP](suan-fa/kmp.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
