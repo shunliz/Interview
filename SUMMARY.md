@@ -63,7 +63,7 @@
     * [聊聊并发（五）——原子操作的实现原理](java/liao-liao-bing-fa-ff08-wu-ff09-2014-2014-yuan-zi-cao-zuo-de-shi-xian-yuan-li.md)
     * [java Thread](java/java-thread.md)
     * [测试](java/ce-shi.md)
-* C/C++
+* [C/C++](cc++.md)
 * [Web](web.md)
   * [javascript](web/javascript.md)
     * [JS实现继承的几种方式](web/javascript/jsshi-xian-ji-cheng-de-ji-zhong-fang-shi.md)
