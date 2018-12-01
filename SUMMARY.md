@@ -102,4 +102,5 @@
 * [Devops](devops.md)
   * [gradle入门](gradleru-men.md)
   * [红帽金融行业 DevOps 案例分享](hong-mao-jin-rong-xing-ye-devops-an-li-fen-xiang.md)
+* [编译原理](bian-yi-yuan-li.md)
 
