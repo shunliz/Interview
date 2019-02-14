@@ -12,6 +12,7 @@
     * [动态规划例题](suan-fa/dong-tai-gui-hua-li-ti.md)
   * [KMP](suan-fa/kmp.md)
   * [Merkle Tree](suan-fa/merkle-tree.md)
+  * [BTree和B+Tree详解](suan-fa/bshu.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
