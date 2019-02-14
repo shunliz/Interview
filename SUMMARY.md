@@ -11,6 +11,7 @@
     * [LCSs](suan-fa/lcss.md)
     * [动态规划例题](suan-fa/dong-tai-gui-hua-li-ti.md)
   * [KMP](suan-fa/kmp.md)
+  * [Merkle Tree](suan-fa/merkle-tree.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
