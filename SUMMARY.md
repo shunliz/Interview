@@ -83,6 +83,8 @@
 * 云计算
   * [openstack](openstack.md)
     * [OpenStack块存储架构与实践](openstack/openstackkuai-cun-chu-jia-gou-yu-shi-jian.md)
+    * Neutron VxLAN + Linux Bridge 环境中的网络 MTU（上）
+    * [OpenStack L3网络QOS的实现思路](openstack/openstack-l3wang-luo-qos-de-shi-xian-si-lu.md)
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
