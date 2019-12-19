@@ -89,6 +89,7 @@
   * [qeum-kvm](qeum-kvm.md)
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
+  * [混合云](hun-he-yun.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
