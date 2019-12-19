@@ -91,6 +91,7 @@
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
     * [KVM模块单独编译\(适合调试\)](qeum-kvm/kvmmo-kuai-dan-du-bian-8bd128-shi-he-diao-8bd529.md)
+    * [qemu2.7编译实战](qeum-kvm/qemu27bian-yi-shi-zhan.md)
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
