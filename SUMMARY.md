@@ -24,6 +24,7 @@
 * 网络
   * [TCP/IP](tcpip.md)
     * [三次握手四次挥手](tcpip/san-ci-wo-shou-si-ci-hui-shou.md)
+    * [DNS](tcpip/dns.md)
   * 路由
     * [直连路由](zhi-lian-lu-you.md)
   * [网络安全](wang-luo-an-quan.md)
@@ -88,6 +89,7 @@
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
   * [kafka](da-shu-ju/kafka.md)
+    * [LinkedIn：我是如何做到1秒发布450万+条消息](da-shu-ju/kafka/linkedinff1a-wo-shi-ru-he-zuo-dao-1-miao-fa-bu-450-4e07+-tiao-xiao-xi.md)
   * [hadoop](da-shu-ju/hadoop.md)
   * [设计](da-shu-ju/she-ji.md)
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
