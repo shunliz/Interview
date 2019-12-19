@@ -91,6 +91,7 @@
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
+    * [QEMU-KVM 和 Ceph RBD 的 缓存机制总结（一）](ceph/qemu-kvm-he-ceph-rbd-de-huan-cun-ji-zhi-zong-jie-ff08-yi-ff09.md)
   * [混合云](hun-he-yun.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
