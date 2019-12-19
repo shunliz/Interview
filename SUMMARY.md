@@ -91,6 +91,7 @@
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * Ceph iSCSI Gateway Demo安装配置（上）
+    * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
   * [混合云](hun-he-yun.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
