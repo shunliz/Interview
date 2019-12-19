@@ -86,6 +86,7 @@
     * Neutron VxLAN + Linux Bridge 环境中的网络 MTU（上）
     * [OpenStack企业私有云新需求（1）：Nova 虚机支持 GPU](openstack/openstackqi-ye-si-you-yun-xin-xu-qiu-ff08-1-nova-xu-ji-zhi-chi-gpu.md)
     * KVM虚拟机支持可信计算
+    * [QEMU-KVM虚机动态迁移原理](openstack/qemu-kvmxu-ji-dong-tai-qian-yi-yuan-li.md)
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
