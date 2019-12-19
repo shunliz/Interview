@@ -85,13 +85,13 @@
     * [OpenStack块存储架构与实践](openstack/openstackkuai-cun-chu-jia-gou-yu-shi-jian.md)
     * Neutron VxLAN + Linux Bridge 环境中的网络 MTU（上）
     * [OpenStack企业私有云新需求（1）：Nova 虚机支持 GPU](openstack/openstackqi-ye-si-you-yun-xin-xu-qiu-ff08-1-nova-xu-ji-zhi-chi-gpu.md)
+    * KVM虚拟机支持可信计算
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
-    * [QEMU-KVM 和 Ceph RBD 的 缓存机制总结（一）](ceph/qemu-kvm-he-ceph-rbd-de-huan-cun-ji-zhi-zong-jie-ff08-yi-ff09.md)
   * [混合云](hun-he-yun.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
