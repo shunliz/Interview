@@ -106,6 +106,7 @@
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
+    * [Ceph 集群整体迁移方案](ceph/ceph-ji-qun-zheng-ti-qian-yi-fang-an.md)
   * [混合云](hun-he-yun.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
