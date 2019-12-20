@@ -88,6 +88,8 @@
     * [OpenStack企业私有云新需求（1）：Nova 虚机支持 GPU](openstack/openstackqi-ye-si-you-yun-xin-xu-qiu-ff08-1-nova-xu-ji-zhi-chi-gpu.md)
     * KVM虚拟机支持可信计算
     * [QEMU-KVM虚机动态迁移原理](openstack/qemu-kvmxu-ji-dong-tai-qian-yi-yuan-li.md)
+    * [SDN Overlay技术白皮书\(上\)](openstack/sdn-overlayji-zhu-bai-pi-4e6628-4e0a29.md)
+    * [SDN Overlay技术白皮书\(下\)](openstack/sdn-overlayji-zhu-bai-pi-4e6628-4e0b29.md)
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
