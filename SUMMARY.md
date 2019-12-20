@@ -91,6 +91,7 @@
     * [SDN Overlay技术白皮书\(上\)](openstack/sdn-overlayji-zhu-bai-pi-4e6628-4e0a29.md)
     * [SDN Overlay技术白皮书\(下\)](openstack/sdn-overlayji-zhu-bai-pi-4e6628-4e0b29.md)
     * [Open vSwitch 的连接跟踪功能于OpenStack性能的帮助](openstack/open-vswitch-de-lian-jiegen-zong-gong-neng-yu-openstack-xing-neng-de-bang-zhu.md)
+    * [虚拟交换bond模式介绍](openstack/xu-ni-jiao-huan-bond-mo-shi-jie-shao.md)
   * Docker
     * [kubernetes](kubernetes.md)
   * [qeum-kvm](qeum-kvm.md)
