@@ -98,6 +98,7 @@
     * [虚机支持虚拟USB存储设备](qeum-kvm/xu-ji-zhi-chi-xu-ni-usb-cun-chu-she-bei.md)
     * [编译qemu和libvirt使支持SDL](qeum-kvm/bian-yi-qemu-he-libvirt-shi-zhi-chi-sdl.md)
     * [弹性伸缩：QEMU 内存热插拔介绍](qeum-kvm/dan-xing-shen-suo-ff1a-qemu-nei-cun-re-cha-ba-jie-shao.md)
+    * [QEMU-KVM 和 Ceph RBD 的 缓存机制总结（一）](qeum-kvm/qemu-kvm-he-ceph-rbd-de-huan-cun-ji-zhi-zong-jie-ff08-yi-ff09.md)
   * [Ceph](ceph.md)
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
