@@ -13,6 +13,7 @@
   * [KMP](suan-fa/kmp.md)
   * [Merkle Tree](suan-fa/merkle-tree.md)
   * [BTree和B+Tree详解](suan-fa/bshu.md)
+  * [面试算法之重建二叉树](suan-fa/mian-shi-suan-fa-zhi-zhong-jian-er-cha-shu.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * 原理
     * [死锁](cao-zuo-xi-tong/si-suo.md)
