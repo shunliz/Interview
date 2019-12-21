@@ -70,6 +70,7 @@
     * [java Thread](java/java-thread.md)
     * [测试](java/ce-shi.md)
     * [Java字节码增强探秘](java/javazi-jie-ma-zeng-qiang-tan-mi.md)
+    * [深入解析Java锁机制](java/shen-ru-jie-xi-java-suo-ji-zhi.md)
 * [C/C++](cc++.md)
 * [Web](web.md)
   * [javascript](web/javascript.md)
