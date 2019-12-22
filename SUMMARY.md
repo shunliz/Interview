@@ -86,7 +86,7 @@
 * 职业
 * [存储](cun-chu.md)
   * [RAID](cun-chu/raid.md)
-* 云计算
+* [云计算](yun-ji-suan.md)
   * [openstack](openstack.md)
     * [OpenStack块存储架构与实践](openstack/openstackkuai-cun-chu-jia-gou-yu-shi-jian.md)
     * Neutron VxLAN + Linux Bridge 环境中的网络 MTU（上）
@@ -115,6 +115,7 @@
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
     * [Ceph 集群整体迁移方案](ceph/ceph-ji-qun-zheng-ti-qian-yi-fang-an.md)
   * [混合云](hun-he-yun.md)
+    * [多云时代：云网融合的多云网络](hun-he-yun/duo-yun-shi-dai-ff1a-yun-wang-rong-he-de-duo-yun-wang-luo.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
