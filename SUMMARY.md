@@ -116,8 +116,9 @@
     * [Ceph 集群整体迁移方案](ceph/ceph-ji-qun-zheng-ti-qian-yi-fang-an.md)
   * [混合云](hun-he-yun.md)
     * [多云时代：云网融合的多云网络](hun-he-yun/duo-yun-shi-dai-ff1a-yun-wang-rong-he-de-duo-yun-wang-luo.md)
-  * 微服务
+  * [微服务](wei-fu-wu.md)
     * [部署微服务：Spring Cloud vs. Kubernetes](bu-shu-weifu-wu-ff1a-spring-cloud-vs-kubernetes.md)
+    * [微服务的4个设计原则和19个解决方案](wei-fu-wu-de-4-ge-she-ji-yuan-ze-he-19-ge-jie-jue-fang-an.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
