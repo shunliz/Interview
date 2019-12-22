@@ -114,6 +114,7 @@
     * [Ceph性能优化总结\(v0.94\)](ceph/cephxing-neng-you-hua-zong-7ed328-v0-94.md)
     * [When Ceph Meets DPDK](ceph/when-ceph-meets-dpdk.md)
     * [Ceph 集群整体迁移方案](ceph/ceph-ji-qun-zheng-ti-qian-yi-fang-an.md)
+    * [硬盘、RAID组与Ceph的IOPS公式与工具](ceph/ying-pan-3001-raid-zu-yu-ceph-de-iops-gong-shi-yu-gong-ju.md)
   * [混合云](hun-he-yun.md)
     * [多云时代：云网融合的多云网络](hun-he-yun/duo-yun-shi-dai-ff1a-yun-wang-rong-he-de-duo-yun-wang-luo.md)
   * [微服务](wei-fu-wu.md)
