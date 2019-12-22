@@ -120,6 +120,7 @@
   * [微服务](wei-fu-wu.md)
     * [部署微服务：Spring Cloud vs. Kubernetes](bu-shu-weifu-wu-ff1a-spring-cloud-vs-kubernetes.md)
     * [微服务的4个设计原则和19个解决方案](wei-fu-wu-de-4-ge-she-ji-yuan-ze-he-19-ge-jie-jue-fang-an.md)
+    * [微服务设计指南](wei-fu-wu-she-ji-zhi-nan.md)
 * [大数据](da-shu-ju.md)
   * [spark](da-shu-ju/spark.md)
   * [storm](da-shu-ju/storm.md)
