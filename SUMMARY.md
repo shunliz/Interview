@@ -131,6 +131,8 @@
   * [设计](da-shu-ju/she-ji.md)
     * [设计数据密集型应用](da-shu-ju/she-ji/she-ji-shu-ju-mi-ji-xing-ying-yong.md)
     * [Map reduce 算法，定式和应用案例](da-shu-ju/she-ji/map-reduce-suan-fa-ff0c-ding-shi-he-ying-yong-an-li.md)
+  * [ELK](da-shu-ju/elk.md)
+    * [分布式系统如何设计？看Elasticsearch是怎么做的](da-shu-ju/elk/fen-bu-shi-xi-tong-ru-he-she-ji-ff1f-kan-elasticsearch-shi-zen-yao-zuo-de.md)
 * [python](python.md)
   * [eventlet原理](python/eventletyuan-li.md)
   * [python的各种推导式（列表推导式、字典推导式、集合推导式）](python/pythonde-ge-zhong-tui-dao-shi-ff08-lie-biao-tui-dao-shi-3001-zi-dian-tui-dao-shi-3001-ji-he-tui-dao-shi-ff09.md)
